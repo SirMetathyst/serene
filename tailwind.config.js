@@ -14,6 +14,7 @@ module.exports = {
 
                 // Include: <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
                 'inter': ["'Inter var'", ...defaultTheme.fontFamily.sans],
+
             },
         },
     },
