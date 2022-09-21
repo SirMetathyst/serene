@@ -126,7 +126,7 @@
 
     <!-- MAIN NAVIGATION -->
     <nav class="container sticky top-0 left-0 px-4 mx-auto sm:px-8 lg:max-w-4xl">
-      <ul class="flex space-x-8 bg-white border-t border-b border-gray-200 contrast-more:border-black">
+      <ul class="flex space-x-8 bg-white border-t border-b border-gray-200 dark:bg-black contrast-more:border-black">
         <li class="relative">
           <a class="block text-lg font-semibold text-gray-700 no-underline leading-[3rem] focus:text-purple-600 hover:text-purple-600"
             tabindex="0" href="#intro">Intro</a>
@@ -1049,9 +1049,12 @@
 
           <p class="mt-8 text-base text-gray-700 contrast-more:text-gray-900">Lorem ipsum dolor sit amet consectetur
             adipisicing elit.
-            Accusantium corporis possimus, amet consectetur saepe cum velit commodi, voluptates aspernatur, nam ullam
+            Accusantium corporis <a class="text-blue-500 underline cursor-pointer hover:text-blue-700">possimus</a>,
+            amet consectetur
+            saepe cum velit commodi, voluptates aspernatur, nam ullam
             pariatur quibusdam sit. <u>Sunt, illum similique. Quia, placeat, amet</u> voluptatem debitis sint et
-            necessitatibus odio assumenda distinctio voluptas accusantium quidem corrupti hic molestiae beatae
+            necessitatibus odio assumenda distinctio voluptas <strong>accusantium</strong> quidem
+            corrupti <em>hic</em> molestiae beatae
             architecto nesciunt id dicta laborum.
           </p>
 
@@ -1084,7 +1087,13 @@
 <h4 class="block text-xl font-semibold text-gray-700 contrast-more:text-gray-900">Heading 4</h4>
 <h5 class="block text-lg font-semibold text-gray-700 contrast-more:text-gray-900">Heading 5</h5>
 <h6 class="block text-base font-semibold text-gray-700 contrast-more:text-gray-900">Heading 6</h6>
-</code></pre>
+
+<p class="block text-base text-gray-700 contrast-more:text-gray-900">Paragraph</p>
+
+<a class="text-blue-500 underline cursor-pointer hover:text-blue-700">Colored</a>
+<strong>Bolded</strong>
+<em>Italicized</em>
+<u>Underlined</u></code></pre>
           <!--————————————————————————————————————————————————————-—-->
 
         </section>
@@ -1110,13 +1119,6 @@
 
           <!-- SECTION: 12-Column Grid -->
           <section class="mt-12" id="grids-12">
-
-            <h3>
-              <a href="#grids-12"
-                class="text-lg font-semibold text-gray-700 hover:underline contrast-more:text-gray-900">
-                # 12-Column
-              </a>
-            </h3>
 
             <div class="grid gap-2 mt-8 md:grid-cols-12">
 
@@ -1276,16 +1278,406 @@
 
             </div>
 
-          </section>
+            <!-- CODE EXAMPLE ————————————————————————————————————————-->
+            <pre class="p-4 mt-8 overflow-auto border border-gray-200 rounded"><code class="block text-sm break-words whitespace-pre prettyprint"><div class="grid gap-2 mt-8 md:grid-cols-12">
+                        
+  <!-- ROW: 1-11 -->
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-1">
+    <p class="mx-auto text-xs font-semibold">
+      One
+    </p>
+  </div>
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-11">
+    <p class="mx-auto text-xs font-semibold">
+      Eleven
+    </p>
+  </div>
+  
+  <!-- ROW: 2-10 -->
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-2">
+    <p class="mx-auto text-xs font-semibold">
+        Two
+    </p>
+  </div>
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-10">
+    <p class="mx-auto text-xs font-semibold">
+      Ten
+    </p>
+  </div>
+  
+  <!-- ROW: 3-9 -->
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-3">
+    <p class="mx-auto text-xs font-semibold">
+      Three
+    </p>
+  </div>      
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-9">
+    <p class="mx-auto text-xs font-semibold">
+      Nine
+    </p>
+  </div>
+  
+  <!-- ROW: 4-8 -->
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-4">
+    <p class="mx-auto text-xs font-semibold">
+      Four
+    </p>
+  </div>
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-8">
+    <p class="mx-auto text-xs font-semibold">
+      Eight
+    </p>
+  </div>
+  
+  <!-- ROW: 5-7 -->
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-5">
+    <p class="mx-auto text-xs font-semibold">
+      Five
+    </p>
+  </div>
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-7">
+    <p class="mx-auto text-xs font-semibold">
+      Seven
+    </p>
+  </div>
+  
+  <!-- ROW: 6-6 -->
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-6">
+    <p class="mx-auto text-xs font-semibold">
+      Six
+    </p>
+  </div>      
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-6">
+    <p class="mx-auto text-xs font-semibold">
+      Six
+    </p>
+  </div>
+  
+  <!-- ROW: 7-5 -->
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-7">
+    <p class="mx-auto text-xs font-semibold">
+      Seven
+    </p>
+  </div>
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-5">
+    <p class="mx-auto text-xs font-semibold">
+      Five
+    </p>
+  </div>
+  
+  <!-- ROW: 8-4 -->
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-8">
+    <p class="mx-auto text-xs font-semibold">
+      Eight
+    </p>
+  </div>       
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-4">
+    <p class="mx-auto text-xs font-semibold">
+      Four
+    </p>
+  </div>
+  
+  <!-- ROW: 9-3 -->
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-9">
+    <p class="mx-auto text-xs font-semibold">
+      Nine
+    </p>
+  </div>
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-3">
+    <p class="mx-auto text-xs font-semibold">
+      Three
+    </p>
+  </div>
+  
+  <!-- ROW: 10-2 -->
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded md:col-span-10">
+    <p class="mx-auto text-xs font-semibold">
+      Ten
+    </p>
+  </div>       
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded md:col-span-2">
+    <p class="mx-auto text-xs font-semibold">
+      Two
+    </p>
+  </div>     
 
-          <!-- CODE EXAMPLE ————————————————————————————————————————-->
-          <pre
-            class="p-4 mt-8 overflow-auto border border-gray-200 rounded"><code class="block text-sm break-words whitespace-pre prettyprint"></code></pre>
-          <!--————————————————————————————————————————————————————-—-->
+  <!-- ROW: 11-1 -->
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded md:col-span-11">
+    <p class="mx-auto text-xs font-semibold">
+      Eleven
+    </p>
+  </div>
+  <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded md:col-span-1">
+    <p class="mx-auto text-xs font-semibold">
+      One
+    </p>
+  </div>
+</div></code></pre>
+            <!--————————————————————————————————————————————————————-—-->
+
+          </section>
+          <!-- SECTION:END: 12-Column Grid -->
+
+          <!-- SECTION: Misc Grid -->
+          <section class="mt-10" id="grids-misc">
+
+            <!-- GRID: HALVES -->
+            <div class="grid gap-2 mt-8 md:grid-cols-2">
+              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+                <p class="mx-auto text-xs font-semibold">
+                  Halves
+                </p>
+              </div>
+              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+                <p class="mx-auto text-xs font-semibold">
+                  Halves
+                </p>
+              </div>
+            </div>
+
+            <!-- GRID: THIRDS -->
+            <div class="grid gap-2 mt-2 md:grid-cols-3">
+              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+                <p class="mx-auto text-xs font-semibold">
+                  Thirds
+                </p>
+              </div>
+              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+                <p class="mx-auto text-xs font-semibold">
+                  Thirds
+                </p>
+              </div>
+              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+                <p class="mx-auto text-xs font-semibold">
+                  Thirds
+                </p>
+              </div>
+            </div>
+
+            <!-- GRID: QUARTERS -->
+            <div class="grid gap-2 mt-2 md:grid-cols-4">
+              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+                <p class="mx-auto text-xs font-semibold">
+                  Quarters
+                </p>
+              </div>
+              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+                <p class="mx-auto text-xs font-semibold">
+                  Quarters
+                </p>
+              </div>
+              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+                <p class="mx-auto text-xs font-semibold">
+                  Quarters
+                </p>
+              </div>
+              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+                <p class="mx-auto text-xs font-semibold">
+                  Quarters
+                </p>
+              </div>
+            </div>
+
+            <!-- GRID: FIFTHS -->
+            <div class="grid gap-2 mt-2 md:grid-cols-5">
+              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+                <p class="mx-auto text-xs font-semibold">
+                  Fifths
+                </p>
+              </div>
+              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+                <p class="mx-auto text-xs font-semibold">
+                  Fifths
+                </p>
+              </div>
+              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+                <p class="mx-auto text-xs font-semibold">
+                  Fifths
+                </p>
+              </div>
+              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+                <p class="mx-auto text-xs font-semibold">
+                  Fifths
+                </p>
+              </div>
+              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+                <p class="mx-auto text-xs font-semibold">
+                  Fifths
+                </p>
+              </div>
+            </div>
+
+            <!-- CODE EXAMPLE ————————————————————————————————————————-->
+            <pre class="p-4 mt-8 overflow-auto border border-gray-200 rounded"><code class="block text-sm break-words whitespace-pre prettyprint"><!-- GRID: HALVES -->
+<div class="grid gap-2 mt-8 md:grid-cols-2">
+  <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+    <p class="mx-auto text-xs font-semibold">
+      Halves
+    </p>
+  </div>
+  <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+    <p class="mx-auto text-xs font-semibold">
+      Halves
+    </p>
+  </div>
+</div>
+
+<!-- GRID: THIRDS -->
+<div class="grid gap-2 mt-2 md:grid-cols-3">
+  <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+    <p class="mx-auto text-xs font-semibold">
+      Thirds
+    </p>
+  </div>
+  <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+    <p class="mx-auto text-xs font-semibold">
+      Thirds
+    </p>
+  </div>
+  <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+    <p class="mx-auto text-xs font-semibold">
+      Thirds
+    </p>
+  </div>
+</div>
+
+<!-- GRID: QUARTERS -->
+<div class="grid gap-2 mt-2 md:grid-cols-4">
+  <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+    <p class="mx-auto text-xs font-semibold">
+      Quarters
+    </p>
+  </div>
+  <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+    <p class="mx-auto text-xs font-semibold">
+      Quarters
+    </p>
+  </div>
+  <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+    <p class="mx-auto text-xs font-semibold">
+      Quarters
+    </p>
+  </div>
+  <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+    <p class="mx-auto text-xs font-semibold">
+      Quarters
+    </p>
+  </div>
+</div>
+
+<!-- GRID: FIFTHS -->
+<div class="grid gap-2 mt-2 md:grid-cols-5">
+  <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+    <p class="mx-auto text-xs font-semibold">
+      Fifths
+    </p>
+  </div>
+  <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+    <p class="mx-auto text-xs font-semibold">
+      Fifths
+    </p>
+  </div>
+  <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+    <p class="mx-auto text-xs font-semibold">
+      Fifths
+    </p>
+  </div>
+  <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+    <p class="mx-auto text-xs font-semibold">
+      Fifths
+    </p>
+  </div>
+  <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+    <p class="mx-auto text-xs font-semibold">
+      Fifths
+    </p>
+  </div>
+</div></code></pre>
+            <!--————————————————————————————————————————————————————-—-->
+
+          </section>
+          <!-- SECTION:END: Misc Grid -->
 
 
         </section>
         <!-- SECTION:END: GRIDS -->
+
+        <!-- SECTION: BUTTONS -->
+        <section class="py-16" id="buttons">
+
+          <h2>
+            <a href="#buttons"
+              class="text-2xl font-semibold text-purple-700 marker:font-semibold hover:underline contrast-more:text-purple-900">
+              # Buttons
+            </a>
+          </h2>
+
+          <p class="mt-8 text-base text-gray-700 contrast-more:text-gray-900">Lorem ipsum dolor sit amet, maxime animi
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur excepturi quisquam ullam odit tenetur
+            perferendis, impedit ea atque sit itaque.
+          </p>
+
+          <!-- STANDARD BUTTONS -->
+          <div class="grid gap-2 mt-8 md:grid-cols-4">
+            <div>
+              <a href="#"
+                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none">Anchor
+                Button</a>
+            </div>
+            <div>
+              <button type="button"
+                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none">Button
+                Element</button>
+            </div>
+            <div>
+              <input type="submit" value="Submit Input"
+                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none">
+            </div>
+            <div>
+              <input type="button" value="Button Input"
+                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none">
+            </div>
+          </div>
+
+          <!-- PRIMARY BUTTONS -->
+          <div class="grid gap-2 mt-4 md:grid-cols-4">
+            <div>
+              <a
+                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 hover:border-purple-700 focus:outline-none">Anchor
+                Button</a>
+            </div>
+            <div>
+              <button type="button"
+                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 hover:border-purple-700 focus:outline-none">Button
+                Element</button>
+            </div>
+            <div>
+              <input type="submit" value="Submit Input"
+                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 hover:border-purple-700 focus:outline-none">
+            </div>
+            <div>
+              <input type="button" value="Button Input"
+                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 hover:border-purple-700 focus:outline-none">
+            </div>
+          </div>
+
+          <!-- CODE EXAMPLE ————————————————————————————————————————-->
+          <pre
+            class="p-4 mt-8 overflow-auto border border-gray-200 rounded"><code class="block text-sm break-words whitespace-pre prettyprint"><!-- STANDARD BUTTONS -->
+<a href="#" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none">Anchor Button</a>
+<button type="button" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none">Button Element</button>
+<input type="submit" value="Submit Input" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none">
+<input type="button" value="Button Input" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none">
+
+<!-- PRIMARY BUTTONS -->
+<a class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 hover:border-purple-700 focus:outline-none">Anchor Button</a>
+<button type="button" class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 hover:border-purple-700 focus:outline-none">Button Element</button>
+<input type="submit" value="Submit Input" class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 hover:border-purple-700 focus:outline-none">
+<input type="button" value="Button Input" class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 hover:border-purple-700 focus:outline-none"></code></pre>
+          <!--————————————————————————————————————————————————————-—-->
+
+        </section>
+        <!-- SECTION:END: BUTTONS -->
 
       </div>
       <!-- CONTAINER:END -->
