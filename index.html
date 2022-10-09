@@ -8,8 +8,6 @@
     <link preload rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link preload href="style.css" rel="stylesheet" />
 
-    <!-- <script defer src="//unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script defer src="//unpkg.com/alpinejs"></script> -->
     <script defer src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
     <!-- DARK MODE: USE SAVED STATE -->
@@ -21,34 +19,6 @@
       }
     </script>
 
-    <style>
-      .arrow:first-child a:after,
-      .arrow:first-child a:before {
-        bottom: 100%;
-        left: 50%;
-        border: solid transparent;
-        content: "";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-      }
-
-      .arrow:first-child a:after {
-        border-color: rgba(255, 255, 255, 0);
-        border-bottom-color: #fff;
-        border-width: 10px;
-        margin-left: -10px;
-      }
-
-      .arrow:first-child a:before {
-        border-color: rgba(238, 238, 238, 0);
-        border-bottom-color: rgb(208 213 221);
-        border-width: 11px;
-        margin-left: -11px;
-      }
-    </style>
-
     <title>skeleton-inspired, tailwind kickstarter.</title>
   </head>
 
@@ -56,7 +26,7 @@
 
     <!-- DARK MODE BUTTON -->
     <button type="button" id="theme-toggle"
-      class="fixed items-center justify-center hidden w-10 h-10 text-base text-gray-600 bg-white border border-gray-200 rounded contrast-more:text-gray-900 contrast-more:border-black contrast-more:hover:border-purple-600 top-8 right-8 hover:text-white hover:bg-purple-600"
+      class="fixed items-center justify-center hidden w-10 h-10 text-base text-gray-600 bg-white border border-gray-200 rounded dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black dark:hover:border-gray-500 focus:outline-none contrast-more:hover:border-purple-600 top-8 right-8 hover:text-white hover:bg-purple-600"
       href="#top">
       <span class="sr-only">Dark Mode</span>
       <svg id="theme-toggle-dark-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -81,7 +51,7 @@
         <!-- SECTION: FEATURES -->
         <section class="pb-16 pt-36">
           <div class="text-center">
-            <h1 class="text-4xl font-light text-gray-700 contrast-more:text-gray-900">skeleton-inspired,
+            <h1 class="text-4xl font-light text-gray-700 dark:text-gray-300 contrast-more:text-black">skeleton-inspired,
               tailwind kickstarter.</h1>
             <a class="inline-block px-8 mt-5 text-base font-semibold leading-9 text-white bg-purple-600 rounded cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900"
               href="#download">Download</a>
@@ -91,7 +61,9 @@
             <div class="mt-16 sm:mt-0">
               <img class="mx-auto rounded sm:h-28 aspect-video" alt="placeholder image"
                 src="https://via.placeholder.com/764x448/EAECF0/101828?text=Aspect:16x9">
-              <p class="mt-4 text-base text-center text-gray-700 contrast-more:text-black overflow-clip">Lorem ipsum
+              <p
+                class="mt-4 text-base text-center text-gray-700 dark:text-gray-300 contrast-more:text-black overflow-clip">
+                Lorem ipsum
                 dolor sit amet consectetur
                 adipisicing elit. Perspiciatis, ab.
               </p>
@@ -99,7 +71,9 @@
             <div class="mt-16 sm:mt-0">
               <img class="mx-auto rounded sm:h-28 aspect-video" alt="placeholder image"
                 src="https://via.placeholder.com/764x448/EAECF0/101828?text=Aspect:16x9">
-              <p class="mt-4 text-base text-center text-gray-700 contrast-more:text-black overflow-clip">Lorem ipsum
+              <p
+                class="mt-4 text-base text-center text-gray-700 dark:text-gray-300 contrast-more:text-black overflow-clip">
+                Lorem ipsum
                 dolor sit amet consectetur
                 adipisicing elit. Perspiciatis, ab.
               </p>
@@ -107,7 +81,9 @@
             <div class="mt-16 sm:mt-0">
               <img class="mx-auto rounded sm:h-28 aspect-video" alt="placeholder image"
                 src="https://via.placeholder.com/764x448/EAECF0/101828?text=Aspect:16x9">
-              <p class="mt-4 text-base text-center text-gray-700 contrast-more:text-black overflow-clip">Lorem ipsum
+              <p
+                class="mt-4 text-base text-center text-gray-700 dark:text-gray-300 contrast-more:text-black overflow-clip">
+                Lorem ipsum
                 dolor sit amet consectetur
                 adipisicing elit. Perspiciatis, ab.
               </p>
@@ -125,59 +101,67 @@
     <!-- INFO: :focus-within does not work on iOS without tabindex="0" on links -->
 
     <!-- MAIN NAVIGATION -->
-    <nav class="container sticky top-0 left-0 px-4 mx-auto sm:px-8 lg:max-w-4xl">
-      <ul class="flex space-x-8 bg-white border-t border-b border-gray-200 dark:bg-black contrast-more:border-black">
+    <nav
+      class="fixed top-0 left-0 w-full px-4 py-2 mx-auto bg-white border-b border-gray-200 dark:border-gray-700 lg:border-0 lg:container lg:py-0 lg:sticky lg:px-8 lg:max-w-4xl dark:bg-black contrast-more:border-black">
+      <label aria-label="Open navigation menu" for="menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" class="w-6 h-6 cursor-pointer lg:hidden"
+          viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd"
+            d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z"
+            clip-rule="evenodd" />
+        </svg>
+      </label>
+      <input type="checkbox" class="hidden peer" id="menu-toggle" />
+      <ul
+        class="flex-col hidden mt-3 [&>:last-child>a]:border-0 [&>:first-child>a]:border-t lg:[&>:first-child>a]:border-t-0 border-gray-200 dark:border-gray-700 contrast-more:border-black lg:mt-0 lg:border-b peer-checked:flex lg:flex lg:space-x-8 lg:flex-row">
         <li class="relative">
-          <a class="block text-lg font-semibold text-gray-700 no-underline leading-[3rem] focus:text-purple-600 hover:text-purple-600"
+          <a class="inline-flex w-full border-b dark:text-gray-300 contrast-more:border-black border-gray-200  dark:border-gray-700 lg:border-0 items-center text-lg font-semibold no-underline lg:leading-[3rem] text-gray-700 contrast-more:text-black  focus:text-purple-600 leading-loose cursor-pointer  hover:text-purple-600"
             tabindex="0" href="#intro">Intro</a>
         </li>
         <li class="relative group">
-          <a class="inline-flex items-center text-lg font-semibold no-underline leading-[3rem] text-gray-700 focus:text-purple-600 cursor-pointer  hover:text-purple-600"
+          <a class="inline-flex w-full border-b dark:text-gray-300 contrast-more:border-black border-gray-200  dark:border-gray-700 lg:border-0 items-center text-lg font-semibold no-underline lg:leading-[3rem] text-gray-700 contrast-more:text-black  focus:text-purple-600 leading-loose cursor-pointer  hover:text-purple-600"
             tabindex="0">Code<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
               class="ml-1" width="20px" height="20px">
               <path fill-rule="evenodd"
                 d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
                 clip-rule="evenodd" />
             </svg></a>
+
           <ul
-            class="group-focus-within:block hidden max-w-fit left-1/2 -translate-x-1/2 absolute bg-white border border-gray-200 contrast-more:border-black rounded shadow-md [&>:first-child>a:hover:after]:border-b-purple-600 [&>:first-child>a:focus:after]:border-b-purple-600 [&>:last-child>a]:border-b-0  [&>:last-child>a]:rounded-b [&>:first-child>a]:rounded-t">
-            <li class="arrow">
-              <a class="block px-5 py-2 text-sm font-semibold text-center text-gray-700 no-underline border-b border-gray-200 contrast-more:border-black whitespace-nowrap hover:border-b-purple-600 hover:bg-purple-600 focus:bg-purple-600 hover:text-white focus:text-white"
+            class="hidden bg-white group-focus-within:block lg:max-w-fit lg:left-1/2 lg:-translate-x-1/2 lg:absolute lg:border lg:rounded-b-md border-gray-200 dark:border-gray-700 contrast-more:border-black lg:[&>:last-child>a]:rounded-b lg:[&>*]:border-b lg:[&>*]:contrast-more:border-black lg:[&>:last-child]:border-0">
+            <li>
+              <a class="block py-1 text-sm font-semibold text-gray-700 no-underline lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
                 tabindex="0" href="#colors">Colors</a>
             </li>
-            <li class="arrow">
-              <a class="block px-5 py-2 text-sm font-semibold text-center text-gray-700 no-underline border-b border-gray-200 contrast-more:border-black whitespace-nowrap hover:border-b-purple-600 hover:bg-purple-600 focus:bg-purple-600 hover:text-white focus:text-white"
+            <li class="">
+              <a class="block py-1 text-sm font-semibold text-gray-700 no-underline lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
                 tabindex="0" href="#typography">Typography</a>
             </li>
-            <li class="arrow">
-              <a class="block px-5 py-2 text-sm font-semibold text-center text-gray-700 no-underline border-b border-gray-200 contrast-more:border-black whitespace-nowrap hover:border-b-purple-600 hover:bg-purple-600 focus:bg-purple-600 hover:text-white focus:text-white"
+            <li>
+              <a class="block py-1 text-sm font-semibold text-gray-700 no-underline lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
                 tabindex="0" href="#grids">Grids</a>
             </li>
-            <li class="arrow">
-              <a class="block px-5 py-2 text-sm font-semibold text-center text-gray-700 no-underline border-b border-gray-200 contrast-more:border-black whitespace-nowrap hover:border-b-purple-600 hover:bg-purple-600 focus:bg-purple-600 hover:text-white focus:text-white"
+            <li>
+              <a class="block py-1 text-sm font-semibold text-gray-700 no-underline lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
                 tabindex="0" href="#buttons">Buttons</a>
             </li>
-            <li class="arrow">
-              <a class="block px-5 py-2 text-sm font-semibold text-center text-gray-700 no-underline border-b border-gray-200 contrast-more:border-black whitespace-nowrap hover:border-b-purple-600 hover:bg-purple-600 focus:bg-purple-600 hover:text-white focus:text-white"
+            <li>
+              <a class="block py-1 text-sm font-semibold text-gray-700 no-underline lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
                 tabindex="0" href="#forms">Forms</a>
             </li>
-            <li class="arrow">
-              <a class="block px-5 py-2 text-sm font-semibold text-center text-gray-700 no-underline border-b border-gray-200 contrast-more:border-black whitespace-nowrap hover:border-b-purple-600 hover:bg-purple-600 focus:bg-purple-600 hover:text-white focus:text-white"
+            <li class="">
+              <a class="block py-1 text-sm font-semibold text-gray-700 no-underline lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
                 tabindex="0" href="#lists">Lists</a>
             </li>
-            <li class="arrow">
-              <a class="block px-5 py-2 text-sm font-semibold text-center text-gray-700 no-underline border-b border-gray-200 contrast-more:border-black whitespace-nowrap hover:border-b-purple-600 hover:bg-purple-600 focus:bg-purple-600 hover:text-white focus:text-white"
+            <li>
+              <a class="block py-1 text-sm font-semibold text-gray-700 no-underline lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
                 tabindex="0" href="#code">Code</a>
             </li>
-            <li class="arrow">
-              <a class="block px-5 py-2 text-sm font-semibold text-center text-gray-700 no-underline border-b border-gray-200 contrast-more:border-black whitespace-nowrap hover:border-b-purple-600 hover:bg-purple-600 focus:bg-purple-600 hover:text-white focus:text-white"
+            <li>
+              <a class="block py-1 text-sm font-semibold text-gray-700 no-underline lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
                 tabindex="0" href="#tables">Tables</a>
             </li>
           </ul>
-        </li>
-        <li class="relative">
-          <a class="block text-lg text-gray-700 font-semibold no-underline leading-[3rem] focus:text-purple-600 hover:text-purple-600"
-            tabindex="0" href="#examples">Examples</a>
         </li>
       </ul>
     </nav>
@@ -187,19 +171,21 @@
     <main>
 
       <!-- CONTAINER -->
-      <div class="container px-4 mx-auto divide-y divide-gray-200 contrast-more:divide-black lg:max-w-4xl sm:px-8">
+      <div
+        class="container px-4 mx-auto divide-y divide-gray-200 dark:divide-gray-700 contrast-more:divide-black lg:max-w-4xl sm:px-8">
 
         <!-- SECTION: WHY SERENE? -->
         <section class="py-16" id="intro">
 
           <h2>
             <a href="#intro"
-              class="text-2xl font-semibold text-purple-700 marker:font-semibold hover:underline contrast-more:text-purple-900">
+              class="text-2xl font-semibold text-purple-700 dark:text-purple-400 marker:font-semibold hover:underline contrast-more:text-purple-900">
               # Is Serene for you?
             </a>
           </h2>
 
-          <p class="mt-8 text-base text-gray-700 contrast-more:text-gray-900">Lorem ipsum dolor sit amet, maxime animi
+          <p class="mt-8 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem ipsum dolor sit
+            amet, maxime animi
             nostrum natus
             assumenda? Aliquid, cupiditate sapiente.
             Quod dolorum voluptatem<u>eum iusto ipsum odio, facere voluptas excepturi optio tenetur cupiditate molestias
@@ -216,12 +202,13 @@
 
           <h2>
             <a href="#colors"
-              class="text-2xl font-semibold text-purple-700 hover:underline contrast-more:text-purple-900">
+              class="text-2xl font-semibold text-purple-700 dark:text-purple-400 hover:underline contrast-more:text-purple-900">
               # Colors
             </a>
           </h2>
 
-          <p class="mt-8 text-base text-gray-700 contrast-more:text-gray-900">Lorem ipsum dolor sit amet, maxime animi
+          <p class="mt-8 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem ipsum dolor sit
+            amet, maxime animi
             nostrum natus
             assumenda? Aliquid, cupiditate sapiente.
             Quod dolorum voluptatem<u>eum iusto ipsum odio, facere voluptas excepturi optio tenetur cupiditate molestias
@@ -233,129 +220,141 @@
           <!-- SECTION: COLOR GRAY -->
           <section class="mt-8">
 
-            <h3 class="text-lg font-semibold text-gray-700 contrast-more:text-gray-900">
+            <h3 class="text-lg font-semibold text-gray-700 contrast-more:text-black dark:text-gray-300">
               Gray
             </h3>
 
             <div class="grid gap-2 mt-2 lg:grid-cols-10">
 
               <!-- SAMPLE: 50 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-gray-700 uppercase rounded-t bg-gray-50">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">50</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#F9fAFB</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">50</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#F9fAFB
+                  </p>
                 </div>
               </div>
 
               <!-- SAMPLE: 100 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-gray-700 uppercase bg-gray-100 rounded-t">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">100</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#F3F4F6</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">100</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#F3F4F6
+                  </p>
                 </div>
               </div>
 
               <!-- SAMPLE: 200 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-gray-700 uppercase bg-gray-200 rounded-t">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">200</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#E5E7EB</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">200</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#E5E7EB</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 300 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-gray-300 rounded-t">
                   1.47
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">300</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#D1D5DB</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">300</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#D1D5DB</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 400 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-gray-400 rounded-t">
                   2.53
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">400</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#9CA3AF</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">400</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#9CA3AF</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 500 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-gray-500 rounded-t">
                   AA 4.83
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">500</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#6B7280</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">500</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#6B7280</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 600 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-gray-600 rounded-t">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">600</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#4B5563</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">600</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#4B5563</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 700 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-gray-700 rounded-t">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">700</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#374151</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">700</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#374151</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 800 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-gray-700 rounded-t">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">800</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#1F2937</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">800</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#1F2937</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 900 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-gray-900 rounded-t">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">900</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#111827</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">900</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#111827</p>
                 </div>
               </div>
 
@@ -367,129 +366,139 @@
           <!-- SECTION: COLOR PURPLE -->
           <section class="mt-8">
 
-            <h3 class="text-lg font-semibold text-purple-700 contrast-more:text-purple-900">
+            <h3 class="text-lg font-semibold text-purple-700 dark:text-purple-400 contrast-more:text-purple-900">
               Purple
             </h3>
 
             <div class="grid gap-2 mt-2 lg:grid-cols-10">
 
               <!-- SAMPLE: 50 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-purple-700 uppercase rounded-t bg-purple-50">
                   AA 6.50
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">50</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#FAF5FF</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">50</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#FAF5FF</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 100 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-purple-700 uppercase bg-purple-100 rounded-t">
                   AA 5.91
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">100</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#F3E8FF</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">100</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#F3E8FF</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 200 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-purple-700 uppercase bg-purple-200 rounded-t">
                   AA 5.12
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">200</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#E9D5FF</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">200</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#E9D5FF</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 300 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-purple-300 rounded-t">
                   1.76
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">300</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#D8B4FE</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">300</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#D8B4FE</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 400 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-purple-400 rounded-t">
                   2.64
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">400</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#C084FC</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">400</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#C084FC</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 500 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-purple-500 rounded-t">
                   3.95
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">500</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#A855F7</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">500</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#A855F7</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 600 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-purple-600 rounded-t">
                   AA 5.38
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">600</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#9333EA</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">600</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#9333EA</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 700 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-purple-700 rounded-t">
                   AA 6.98
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">700</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#7E22CE</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">700</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#7E22CE</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 800 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-purple-700 rounded-t">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">800</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#6B21A8</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">800</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#6B21A8</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 900 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-purple-900 rounded-t">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">900</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#581C87</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">900</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#581C87</p>
                 </div>
               </div>
 
@@ -508,122 +517,132 @@
             <div class="grid gap-2 mt-2 lg:grid-cols-10">
 
               <!-- SAMPLE: 50 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-green-700 uppercase rounded-t bg-green-50">
                   AA 4.79
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">50</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#F0FDF4</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">50</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#F0FDF4</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 100 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-green-700 uppercase bg-green-100 rounded-t">
                   AA 4.56
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">100</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#DCFCE7</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">100</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#DCFCE7</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 200 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-green-700 uppercase bg-green-200 rounded-t">
                   4.13
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">200</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#BBF7D0</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">200</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#BBF7D0</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 300 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-green-300 rounded-t">
                   1.40
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">300</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#86EFAC</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">300</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#86EFAC</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 400 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-green-400 rounded-t">
                   1.74
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">400</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#4ADE80</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">400</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#4ADE80</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 500 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-green-500 rounded-t">
                   2.27
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">500</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#22C55E</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">500</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#22C55E</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 600 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-green-600 rounded-t">
                   3.29
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">600</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#16A34A</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">600</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#16A34A</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 700 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-green-700 rounded-t">
                   AA 5.01
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">700</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#15803D</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">700</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#15803D</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 800 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-green-700 rounded-t">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">800</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#166534</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">800</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#166534</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 900 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-green-900 rounded-t">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">900</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#14532D</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">900</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#14532D</p>
                 </div>
               </div>
 
@@ -642,122 +661,132 @@
             <div class="grid gap-2 mt-2 lg:grid-cols-10">
 
               <!-- SAMPLE: 50 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-blue-700 uppercase rounded-t bg-blue-50">
                   AA 6.15
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">50</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#EFF6FF</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">50</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#EFF6FF</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 100 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-blue-700 uppercase bg-blue-100 rounded-t">
                   AA 5.72
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">100</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#DBEAFE</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">100</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#DBEAFE</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 200 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-blue-700 uppercase bg-blue-200 rounded-t">
                   AA 4.92
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">200</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#BFDBFE</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">200</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#BFDBFE</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 300 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-blue-300 rounded-t">
                   1.69
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">300</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#93C5FD</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">300</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#93C5FD</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 400 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-blue-400 rounded-t">
                   2.49
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">400</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#60A5FA</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">400</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#60A5FA</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 500 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-blue-500 rounded-t">
                   2.49
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">500</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#3B82F6</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">500</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#3B82F6</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 600 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-blue-600 rounded-t">
                   AA 4.95
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">600</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#2563EB</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">600</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#2563EB</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 700 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-blue-700 rounded-t">
                   AA 6.61
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">700</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#1D4ED8</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">700</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#1D4ED8</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 800 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-blue-700 rounded-t">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">800</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#1E40AF</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">800</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#1E40AF</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 900 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-blue-900 rounded-t">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">900</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#1E3A8A</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">900</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#1E3A8A</p>
                 </div>
               </div>
 
@@ -776,122 +805,132 @@
             <div class="grid gap-2 mt-2 lg:grid-cols-10">
 
               <!-- SAMPLE: 50 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-orange-700 uppercase rounded-t bg-orange-50">
                   AA 4.87
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">50</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#FFF7ED</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">50</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#FFF7ED</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 100 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-orange-700 uppercase bg-orange-100 rounded-t">
                   AA 4.51
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">100</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#FFEDD5</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">100</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#FFEDD5</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 200 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-orange-700 uppercase bg-orange-200 rounded-t">
                   3.82
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">200</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#FED7AA</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">200</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#FED7AA</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 300 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-orange-300 rounded-t">
                   1.68
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">300</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#FDBA74</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">300</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#FDBA74</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 400 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-orange-400 rounded-t">
                   2.26
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">400</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#FB923C</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">400</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#FB923C</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 500 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-orange-500 rounded-t">
                   2.80
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">500</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#F97316</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">500</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#F97316</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 600 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-orange-600 rounded-t">
                   3.55
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">600</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#EA580C</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">600</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#EA580C</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 700 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-orange-700 rounded-t">
                   AA 5.17
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">700</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#C2410C</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">700</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#C2410C</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 800 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-orange-700 rounded-t">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">800</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#9A3412</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">800</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#9A3412</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 900 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-orange-900 rounded-t">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">900</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#7C2D12</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">900</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#7C2D12</p>
                 </div>
               </div>
 
@@ -910,122 +949,132 @@
             <div class="grid gap-2 mt-2 lg:grid-cols-10">
 
               <!-- SAMPLE: 50 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-red-700 uppercase rounded-t bg-red-50">
                   AA 5.91
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">50</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#FEF2F2</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">50</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#FEF2F2</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 100 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-red-700 uppercase bg-red-100 rounded-t">
                   AA 5.29
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">100</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#FEE2E2</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">100</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#FEE2E2</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 200 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-red-700 uppercase bg-red-200 rounded-t">
                   4.47
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">200</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#FECACA</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">200</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#FECACA</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 300 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-red-300 rounded-t">
                   3.40
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">300</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#FCA5A5</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">300</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#FCA5A5</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 400 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-red-400 rounded-t">
                   2.76
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">400</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#F87171</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">400</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#F87171</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 500 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-red-500 rounded-t">
                   3.76
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">500</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#EF4444</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">500</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#EF4444</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 600 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-red-600 rounded-t">
                   AA 4.82
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">600</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#DC2626</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">600</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#DC2626</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 700 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-red-700 rounded-t">
                   AA 6.47
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">700</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#B91C1C</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">700</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#B91C1C</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 800 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-red-700 rounded-t">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">800</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#991B1B</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">800</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#991B1B</p>
                 </div>
               </div>
 
               <!-- SAMPLE: 900 -->
-              <div class="flex flex-col col-span-10 rounded md:shadow-md md:col-span-1">
+              <div
+                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-red-900 rounded-t">
                   AAA
                 </div>
-                <div class="flex justify-between p-2 bg-white rounded-b lg:flex-col">
-                  <p class="text-xs font-semibold text-gray-700 uppercase">900</p>
-                  <p class="text-xs font-semibold text-gray-500 uppercase">#7F1D1D</p>
+                <div class="flex justify-between p-2 bg-white rounded-b dark:bg-black lg:flex-col">
+                  <p class="text-xs font-semibold text-gray-700 uppercase dark:text-gray-300">900</p>
+                  <p class="text-xs font-semibold text-gray-500 uppercase dark:text-gray-300">#7F1D1D</p>
                 </div>
               </div>
 
@@ -1042,12 +1091,14 @@
 
           <h2>
             <a href="#typography"
-              class="text-2xl font-semibold text-purple-700 hover:underline contrast-more:text-purple-900">
+              class="text-2xl font-semibold text-purple-700 dark:text-purple-400 hover:underline contrast-more:text-purple-900">
               # Typography
             </a>
           </h2>
 
-          <p class="mt-8 text-base text-gray-700 contrast-more:text-gray-900">Lorem ipsum dolor sit amet consectetur
+          <p class="mt-8 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem ipsum dolor sit
+            amet
+            consectetur
             adipisicing elit.
             Accusantium corporis <a class="text-blue-500 underline cursor-pointer hover:text-blue-700">possimus</a>,
             amet consectetur
@@ -1060,8 +1111,9 @@
 
           <div class="grid gap-2 mt-8 md:grid-cols-12">
 
-            <div class="flex col-span-6 p-2 rounded contrast-more:text-gray-900 md:col-span-6">
-              <p class="text-base text-gray-700 contrast-more:text-gray-900">Lorem ipsum dolor sit amet consectetur
+            <div class="flex col-span-6 p-2 rounded contrast-more:text-black md:col-span-6">
+              <p class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem ipsum dolor sit amet
+                consectetur
                 adipisicing elit. velit commodi, voluptates aspernatur, nam
                 ullam
                 pariatur quibusdam sit. <u>Sunt, illum, placeat, amet</u> voluptatem debitis sint et
@@ -1069,26 +1121,34 @@
               </p>
             </div>
 
-            <div class="flex flex-col col-span-6 p-2 rounded contrast-more:text-gray-900 md:col-span-6">
-              <h1 class="block text-2xl font-semibold text-gray-700 contrast-more:text-gray-900">Heading 1</h1>
-              <h2 class="block text-2xl font-semibold text-gray-700 contrast-more:text-gray-900">Heading 2</h2>
-              <h3 class="block text-lg font-semibold text-gray-700 contrast-more:text-gray-900">Heading 3</h3>
-              <h4 class="block text-base font-semibold text-gray-700 contrast-more:text-gray-900">Heading 4</h4>
-              <h5 class="block text-sm font-semibold text-gray-700 contrast-more:text-gray-900">Heading 5</h5>
-              <h6 class="block text-xs font-semibold text-gray-700 contrast-more:text-gray-900">Heading 6</h6>
+            <div class="flex flex-col col-span-6 p-2 rounded contrast-more:text-black md:col-span-6">
+              <h1 class="block text-2xl font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">
+                Heading
+                1</h1>
+              <h2 class="block text-2xl font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">
+                Heading 2</h2>
+              <h3 class="block text-lg font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading
+                3</h3>
+              <h4 class="block text-base font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">
+                Heading 4</h4>
+              <h5 class="block text-sm font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading
+                5</h5>
+              <h6 class="block text-xs font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading
+                6</h6>
             </div>
 
           </div>
 
           <!-- CODE EXAMPLE ————————————————————————————————————————-->
-          <pre class="p-4 mt-8 overflow-auto border border-gray-200 rounded"><code class="block text-sm break-words whitespace-pre prettyprint"><h1 class="block text-4xl font-semibold text-gray-700 contrast-more:text-gray-900">Heading 1</h1>
-<h2 class="block text-3xl font-semibold text-gray-700 contrast-more:text-gray-900">Heading 2</h2>
-<h3 class="block text-2xl font-semibold text-gray-700 contrast-more:text-gray-900">Heading 3</h3>
-<h4 class="block text-xl font-semibold text-gray-700 contrast-more:text-gray-900">Heading 4</h4>
-<h5 class="block text-lg font-semibold text-gray-700 contrast-more:text-gray-900">Heading 5</h5>
-<h6 class="block text-base font-semibold text-gray-700 contrast-more:text-gray-900">Heading 6</h6>
+          <pre
+            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:bg-white contrast-more:border-black"><code class="block text-sm break-words whitespace-pre prettyprint"><h1 class="block text-4xl font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading 1</h1>
+<h2 class="block text-3xl font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading 2</h2>
+<h3 class="block text-2xl font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading 3</h3>
+<h4 class="block text-xl font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading 4</h4>
+<h5 class="block text-lg font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading 5</h5>
+<h6 class="block text-base font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading 6</h6>
 
-<p class="block text-base text-gray-700 contrast-more:text-gray-900">Paragraph</p>
+<p class="block text-base text-gray-700 contrast-more:text-black dark:text-gray-300 ">Paragraph</p>
 
 <a class="text-blue-500 underline cursor-pointer hover:text-blue-700">Colored</a>
 <strong>Bolded</strong>
@@ -1104,12 +1164,14 @@
 
           <h2>
             <a href="#grids"
-              class="text-2xl font-semibold text-purple-700 hover:underline contrast-more:text-purple-900">
+              class="text-2xl font-semibold text-purple-700 dark:text-purple-400 hover:underline contrast-more:text-purple-900">
               # Grids
             </a>
           </h2>
 
-          <p class="mt-8 text-base text-gray-700 contrast-more:text-gray-900">Lorem ipsum dolor sit amet consectetur
+          <p class="mt-8 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem ipsum dolor sit
+            amet
+            consectetur
             adipisicing elit.
             Accusantium corporis possimus, amet consectetur saepe cum velit commodi, voluptates aspernatur, nam ullam
             pariatur quibusdam sit. <u>Sunt, illum similique. Quia, placeat, amet</u> voluptatem debitis sint et
@@ -1117,20 +1179,20 @@
             architecto nesciunt id dicta laborum.
           </p>
 
-          <!-- SECTION: 12-Column Grid -->
+          <!-- SECTION: 12-COLUMN GRID -->
           <section class="mt-8" id="grids-12">
 
             <div class="grid gap-2 mt-8 md:grid-cols-12">
 
               <!-- ROW: 1-11 -->
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-1">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-1">
                 <p class="mx-auto text-xs font-semibold">
                   One
                 </p>
               </div>
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-11">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-11">
                 <p class="mx-auto text-xs font-semibold">
                   Eleven
                 </p>
@@ -1138,13 +1200,13 @@
 
               <!-- ROW: 2-10 -->
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-2">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:bg-white dark:text-gray-300 dark:bg-gray-700 contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-2">
                 <p class="mx-auto text-xs font-semibold">
                   Two
                 </p>
               </div>
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-10">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-10">
                 <p class="mx-auto text-xs font-semibold">
                   Ten
                 </p>
@@ -1152,14 +1214,14 @@
 
               <!-- ROW: 3-9 -->
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-3">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-3">
                 <p class="mx-auto text-xs font-semibold">
                   Three
                 </p>
               </div>
 
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-9">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-9">
                 <p class="mx-auto text-xs font-semibold">
                   Nine
                 </p>
@@ -1167,13 +1229,13 @@
 
               <!-- ROW: 4-8 -->
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-4">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-4">
                 <p class="mx-auto text-xs font-semibold">
                   Four
                 </p>
               </div>
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-8">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-8">
                 <p class="mx-auto text-xs font-semibold">
                   Eight
                 </p>
@@ -1181,13 +1243,13 @@
 
               <!-- ROW: 5-7 -->
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-5">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-5">
                 <p class="mx-auto text-xs font-semibold">
                   Five
                 </p>
               </div>
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-7">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-7">
                 <p class="mx-auto text-xs font-semibold">
                   Seven
                 </p>
@@ -1195,14 +1257,14 @@
 
               <!-- ROW: 6-6 -->
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-6">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-6">
                 <p class="mx-auto text-xs font-semibold">
                   Six
                 </p>
               </div>
 
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-6">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-6">
                 <p class="mx-auto text-xs font-semibold">
                   Six
                 </p>
@@ -1210,13 +1272,13 @@
 
               <!-- ROW: 7-5 -->
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-7">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-7">
                 <p class="mx-auto text-xs font-semibold">
                   Seven
                 </p>
               </div>
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-5">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-5">
                 <p class="mx-auto text-xs font-semibold">
                   Five
                 </p>
@@ -1224,14 +1286,14 @@
 
               <!-- ROW: 8-4 -->
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-8">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-8">
                 <p class="mx-auto text-xs font-semibold">
                   Eight
                 </p>
               </div>
 
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-4">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-4">
                 <p class="mx-auto text-xs font-semibold">
                   Four
                 </p>
@@ -1239,38 +1301,42 @@
 
               <!-- ROW: 9-3 -->
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-9">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-9">
                 <p class="mx-auto text-xs font-semibold">
                   Nine
                 </p>
               </div>
               <div
-                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900 md:col-span-3">
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black md:col-span-3">
                 <p class="mx-auto text-xs font-semibold">
                   Three
                 </p>
               </div>
 
               <!-- ROW: 10-2 -->
-              <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded md:col-span-10">
+              <div
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black md:col-span-10">
                 <p class="mx-auto text-xs font-semibold">
                   Ten
                 </p>
               </div>
 
-              <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded md:col-span-2">
+              <div
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black md:col-span-2">
                 <p class="mx-auto text-xs font-semibold">
                   Two
                 </p>
               </div>
 
               <!-- ROW: 11-1 -->
-              <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded md:col-span-11">
+              <div
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black md:col-span-11">
                 <p class="mx-auto text-xs font-semibold">
                   Eleven
                 </p>
               </div>
-              <div class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded md:col-span-1">
+              <div
+                class="flex col-span-12 p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black md:col-span-1">
                 <p class="mx-auto text-xs font-semibold">
                   One
                 </p>
@@ -1279,7 +1345,8 @@
             </div>
 
             <!-- CODE EXAMPLE ————————————————————————————————————————-->
-            <pre class="p-4 mt-8 overflow-auto border border-gray-200 rounded"><code class="block text-sm break-words whitespace-pre prettyprint"><div class="grid gap-2 md:grid-cols-12">
+            <pre
+              class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:bg-white contrast-more:border-black"><code class="block text-sm break-words whitespace-pre prettyprint"><div class="grid gap-2 md:grid-cols-12">
                         
   <!-- ROW: 1-11 -->
   <div class="col-span-12 md:col-span-1">
@@ -1372,160 +1439,624 @@
             <!--————————————————————————————————————————————————————-—-->
 
           </section>
-          <!-- SECTION:END: 12-Column Grid -->
+          <!-- SECTION:END: 12-COLUMN GRID -->
 
-          <!-- SECTION: Misc Grid -->
-          <section class="mt-8" id="grids-misc">
+          <!-- SECTION: AUTO-GRID -->
+          <section class="mt-8" id="grids-auto">
 
-            <!-- GRID: HALVES -->
-            <div class="grid gap-2 mt-8 md:grid-cols-2">
-              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+            <!-- 1 COLUMN -->
+            <div class="grid grid-flow-row gap-2 mt-8 lg:grid-flow-col auto-rows-max">
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
                 <p class="mx-auto text-xs font-semibold">
-                  Halves
-                </p>
-              </div>
-              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
-                <p class="mx-auto text-xs font-semibold">
-                  Halves
+                  One
                 </p>
               </div>
             </div>
 
-            <!-- GRID: THIRDS -->
-            <div class="grid gap-2 mt-2 md:grid-cols-3">
-              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+            <!-- 2 COLUMN -->
+            <div class="grid grid-flow-row gap-2 mt-2 lg:grid-flow-col auto-rows-max">
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
                 <p class="mx-auto text-xs font-semibold">
-                  Thirds
+                  Two
                 </p>
               </div>
-              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
                 <p class="mx-auto text-xs font-semibold">
-                  Thirds
-                </p>
-              </div>
-              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
-                <p class="mx-auto text-xs font-semibold">
-                  Thirds
-                </p>
-              </div>
-            </div>
-
-            <!-- GRID: QUARTERS -->
-            <div class="grid gap-2 mt-2 md:grid-cols-4">
-              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
-                <p class="mx-auto text-xs font-semibold">
-                  Quarters
-                </p>
-              </div>
-              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
-                <p class="mx-auto text-xs font-semibold">
-                  Quarters
-                </p>
-              </div>
-              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
-                <p class="mx-auto text-xs font-semibold">
-                  Quarters
-                </p>
-              </div>
-              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
-                <p class="mx-auto text-xs font-semibold">
-                  Quarters
+                  Two
                 </p>
               </div>
             </div>
 
-            <!-- GRID: FIFTHS -->
-            <div class="grid gap-2 mt-2 md:grid-cols-5">
-              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+            <!-- 3 COLUMN -->
+            <div class="grid grid-flow-row gap-2 mt-2 lg:grid-flow-col auto-rows-max">
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
                 <p class="mx-auto text-xs font-semibold">
-                  Fifths
+                  Three
                 </p>
               </div>
-              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
                 <p class="mx-auto text-xs font-semibold">
-                  Fifths
+                  Three
                 </p>
               </div>
-              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
                 <p class="mx-auto text-xs font-semibold">
-                  Fifths
+                  Three
                 </p>
               </div>
-              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+            </div>
+
+            <!-- 4 COLUMN -->
+            <div class="grid grid-flow-row gap-2 mt-2 lg:grid-flow-col auto-rows-max">
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
                 <p class="mx-auto text-xs font-semibold">
-                  Fifths
+                  Four
                 </p>
               </div>
-              <div class="flex p-2 text-gray-700 bg-gray-200 rounded contrast-more:text-gray-900">
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
                 <p class="mx-auto text-xs font-semibold">
-                  Fifths
+                  Four
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Four
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Four
+                </p>
+              </div>
+            </div>
+
+            <!-- 5 COLUMN -->
+            <div class="grid grid-flow-row gap-2 mt-2 lg:grid-flow-col auto-rows-max">
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Five
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Five
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Five
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Five
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Five
+                </p>
+              </div>
+            </div>
+
+            <!-- 6 COLUMN -->
+            <div class="grid grid-flow-row gap-2 mt-2 lg:grid-flow-col auto-rows-max">
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Six
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Six
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Six
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Six
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Six
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Six
+                </p>
+              </div>
+            </div>
+
+            <!-- 7 COLUMN -->
+            <div class="grid grid-flow-row gap-2 mt-2 lg:grid-flow-col auto-rows-max">
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Seven
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Seven
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Seven
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Seven
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Seven
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Seven
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Seven
+                </p>
+              </div>
+            </div>
+
+            <!-- 8 COLUMN -->
+            <div class="grid grid-flow-row gap-2 mt-2 lg:grid-flow-col auto-rows-max">
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eight
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eight
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eight
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eight
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eight
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eight
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eight
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eight
+                </p>
+              </div>
+            </div>
+
+            <!-- 9 COLUMN -->
+            <div class="grid grid-flow-row gap-2 mt-2 lg:grid-flow-col auto-rows-max">
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Nine
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Nine
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Nine
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Nine
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Nine
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Nine
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Nine
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Nine
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Nine
+                </p>
+              </div>
+            </div>
+
+            <!-- 10 COLUMN -->
+            <div class="grid grid-flow-row gap-2 mt-2 lg:grid-flow-col auto-rows-max">
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Ten
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Ten
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Ten
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Ten
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Ten
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Ten
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Ten
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Ten
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Ten
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Ten
+                </p>
+              </div>
+            </div>
+
+            <!-- 11 COLUMN -->
+            <div class="grid grid-flow-row gap-2 mt-2 lg:grid-flow-col auto-rows-max">
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eleven
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eleven
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eleven
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eleven
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eleven
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eleven
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eleven
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eleven
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eleven
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eleven
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Eleven
+                </p>
+              </div>
+            </div>
+
+            <!-- 12 COLUMN -->
+            <div class="grid grid-flow-row gap-2 mt-2 lg:grid-flow-col auto-rows-max">
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Twelve
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Twelve
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Twelve
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Twelve
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Twelve
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Twelve
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Twelve
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Twelve
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Twelve
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Twelve
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Twelve
+                </p>
+              </div>
+              <!-- COL: -->
+              <div
+                class="flex p-2 text-gray-700 bg-gray-200 rounded dark:text-gray-300 dark:bg-gray-700 contrast-more:bg-white contrast-more:border contrast-more:border-black contrast-more:text-black">
+                <p class="mx-auto text-xs font-semibold">
+                  Twelve
                 </p>
               </div>
             </div>
 
             <!-- CODE EXAMPLE ————————————————————————————————————————-->
-            <pre class="p-4 mt-8 overflow-auto border border-gray-200 rounded"><code class="block text-sm break-words whitespace-pre prettyprint"><!-- GRID: HALVES -->
-<div class="grid gap-2 md:grid-cols-2">
+            <pre
+              class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:bg-white contrast-more:border-black"><code class="block text-sm break-words whitespace-pre prettyprint"><!-- AUTO GRID -->
+<div class="grid grid-flow-row gap-2 mt-2 md:grid-flow-col auto-rows-max">
+  <!-- COL: -->
   <div>
-    Halves
   </div>
+  <!-- COL: -->
   <div>
-    Halves
   </div>
-</div>
-
-<!-- GRID: THIRDS -->
-<div class="grid gap-2 md:grid-cols-3">
+  <!-- COL: -->
   <div>
-    Thirds
   </div>
-  <div>
-    Thirds
-  </div>
-  <div>
-    Thirds
-  </div>
-</div>
-
-<!-- GRID: QUARTERS -->
-<div class="grid gap-2 md:grid-cols-4">
-  <div>
-    Quarters
-  </div>
-  <div>
-    Quarters
-  </div>
-  <div>
-    Quarters
-  </div>
-  <div>
-    Quarters
-  </div>
-</div>
-
-<!-- GRID: FIFTHS -->
-<div class="grid gap-2 md:grid-cols-5">
-  <div>
-    Fifths
-  </div>
-  <div>
-    Fifths
-  </div>
-  <div>
-    Fifths
-  </div>
-  <div>
-    Fifths
-  </div>
-  <div>
-    Fifths
-  </div>
+  <!-- ... -->
 </div></code></pre>
             <!--————————————————————————————————————————————————————-—-->
 
           </section>
-          <!-- SECTION:END: Misc Grid -->
-
+          <!-- SECTION:END: AUTO-GRIDD -->
 
         </section>
         <!-- SECTION:END: GRIDS -->
@@ -1535,12 +2066,13 @@
 
           <h2>
             <a href="#buttons"
-              class="text-2xl font-semibold text-purple-700 marker:font-semibold hover:underline contrast-more:text-purple-900">
+              class="text-2xl font-semibold text-purple-700 dark:text-purple-400 marker:font-semibold hover:underline contrast-more:text-purple-900">
               # Buttons
             </a>
           </h2>
 
-          <p class="mt-8 text-base text-gray-700 contrast-more:text-gray-900">Lorem ipsum dolor sit amet, maxime animi
+          <p class="mt-8 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem ipsum dolor sit
+            amet, maxime animi
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur excepturi quisquam ullam odit tenetur
             perferendis, impedit ea atque sit itaque.
           </p>
@@ -1549,21 +2081,21 @@
           <div class="grid gap-2 mt-8 md:grid-cols-4">
             <div>
               <a href="#"
-                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none">Anchor
+                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">Anchor
                 Button</a>
             </div>
             <div>
               <button type="button"
-                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none">Button
+                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">Button
                 Element</button>
             </div>
             <div>
               <input type="submit" value="Submit Input"
-                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none">
+                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">
             </div>
             <div>
               <input type="button" value="Button Input"
-                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none">
+                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">
             </div>
           </div>
 
@@ -1571,47 +2103,344 @@
           <div class="grid gap-2 mt-4 md:grid-cols-4">
             <div>
               <a
-                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 hover:border-purple-700 focus:outline-none">Anchor
+                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">Anchor
                 Button</a>
             </div>
             <div>
               <button type="button"
-                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 hover:border-purple-700 focus:outline-none">Button
+                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">Button
                 Element</button>
             </div>
             <div>
               <input type="submit" value="Submit Input"
-                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 hover:border-purple-700 focus:outline-none">
+                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">
             </div>
             <div>
               <input type="button" value="Button Input"
-                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 hover:border-purple-700 focus:outline-none">
+                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">
             </div>
           </div>
 
           <!-- CODE EXAMPLE ————————————————————————————————————————-->
           <pre
-            class="p-4 mt-8 overflow-auto border border-gray-200 rounded"><code class="block text-sm break-words whitespace-pre prettyprint"><!-- STANDARD BUTTONS -->
-<a href="#" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none">Anchor Button</a>
-<button type="button" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none">Button Element</button>
-<input type="submit" value="Submit Input" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none">
-<input type="button" value="Button Input" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none">
+            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700"><code class="block text-sm break-words whitespace-pre prettyprint"><!-- STANDARD BUTTONS -->
+<a href="#" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">Anchor Button</a>
+<button type="button" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">Button Element</button>
+<input type="submit" value="Submit Input" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">
+<input type="button" value="Button Input" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">
 
 <!-- PRIMARY BUTTONS -->
-<a class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 hover:border-purple-700 focus:outline-none">Anchor Button</a>
-<button type="button" class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 hover:border-purple-700 focus:outline-none">Button Element</button>
-<input type="submit" value="Submit Input" class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 hover:border-purple-700 focus:outline-none">
-<input type="button" value="Button Input" class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 hover:border-purple-700 focus:outline-none"></code></pre>
+<a class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">Anchor Button</a>
+<button type="button" class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">Button Element</button>
+<input type="submit" value="Submit Input" class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">
+<input type="button" value="Button Input" class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none"></code></pre>
           <!--————————————————————————————————————————————————————-—-->
 
         </section>
         <!-- SECTION:END: BUTTONS -->
 
+        <!-- SECTION: FORM -->
+        <section class="py-16" id="forms">
+
+          <h2>
+            <a href="#forms"
+              class="text-2xl font-semibold text-purple-700 dark:text-purple-400 marker:font-semibold hover:underline contrast-more:text-purple-900">
+              # Forms
+            </a>
+          </h2>
+
+          <p class="mt-8 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem ipsum dolor sit
+            amet, maxime animi
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur excepturi quisquam ullam odit tenetur
+            perferendis, impedit ea atque sit itaque.
+          </p>
+
+          <form action="#form">
+            <div class="grid grid-flow-row gap-4 mt-8 lg:gap-8 lg:grid-flow-col auto-rows-max">
+              <div class="flex flex-col">
+                <label for="exampleEmailInput"
+                  class="block text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Your
+                  email</label>
+                <input
+                  class="block w-full text-gray-700 border-gray-300 rounded-sm dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
+                  type="email" id="exampleEmailInput">
+              </div>
+              <div class="flex flex-col">
+                <label for="exampleRecipientInput"
+                  class="block text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Reason
+                  for contacting</label>
+                <select
+                  class="block w-full text-gray-700 border-gray-300 rounded-sm dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
+                  id="exampleRecipientInput">
+                  <option value="Option 1">Questions</option>
+                  <option value="Option 2">Admiration</option>
+                  <option value="Option 3">Can I get your number?</option>
+                </select>
+              </div>
+            </div>
+            <div class="flex flex-col mt-4">
+              <label for="exampleMessage"
+                class="block text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Message</label>
+              <textarea
+                class="block w-full text-gray-700 border-gray-300 rounded-sm dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
+                id="exampleMessage"></textarea>
+            </div>
+            <div class="flex justify-between mt-4">
+              <input type="submit" value="Submit"
+                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">
+
+              <label class="example-send-yourself-copy">
+                <input type="checkbox"
+                  class="w-4 h-4 text-purple-600 border-gray-300 rounded-sm dark:bg-black dark:ring-offset-black dark:checked:bg-purple-600 focus:ring-purple-600 sm:text-sm">
+                <span class="ml-2 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Send
+                  a copy to
+                  yourself</span>
+              </label>
+            </div>
+          </form>
+
+          <!-- CODE EXAMPLE ————————————————————————————————————————-->
+          <pre
+            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:border-black"><code class="block text-sm break-words whitespace-pre prettyprint"><form action="#form">
+  <div class="grid grid-flow-row gap-4 mt-8 lg:gap-8 lg:grid-flow-col auto-rows-max">
+    <div class="flex flex-col">
+      <label for="exampleEmailInput" class="block text-base text-gray-700 contrast-more:text-black">Your
+        email</label>
+      <input
+        class="block w-full text-gray-700 border-gray-300 rounded-sm dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
+        type="email" id="exampleEmailInput">
+    </div>
+    <div class="flex flex-col">
+      <label for="exampleRecipientInput" class="block text-base text-gray-700 contrast-more:text-black">Reason
+        for contacting</label>
+      <select
+        class="block w-full text-gray-700 border-gray-300 rounded-sm dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
+        id="exampleRecipientInput">
+        <option value="Option 1">Questions</option>
+        <option value="Option 2">Admiration</option>
+        <option value="Option 3">Can I get your number?</option>
+      </select>
+    </div>
+  </div>
+  <div class="flex flex-col mt-4">
+    <label for="exampleMessage" class="block text-base text-gray-700 contrast-more:text-black">Message</label>
+    <textarea
+      class="block w-full text-gray-700 border-gray-300 rounded-sm dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
+      id="exampleMessage"></textarea>
+  </div>
+  <div class="flex justify-between mt-4">
+    <input type="submit" value="Submit"
+      class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">      
+    <label class="example-send-yourself-copy">
+      <input type="checkbox" class="w-4 h-4 text-purple-600 border-gray-300 rounded-sm dark:bg-black dark:ring-offset-black dark:checked:bg-purple-600 focus:ring-purple-600 sm:text-sm">
+      <span class="ml-2 text-base text-gray-700 contrast-more:text-black">Send a copy to yourself</span>
+    </label>
+  </div>
+</form></code></pre>
+          <!--————————————————————————————————————————————————————-—-->
+
+        </section>
+        <!-- SECTION:END: FORM -->
+
+        <!-- SECTION: LISTS -->
+        <section class="py-16" id="lists">
+
+          <h2>
+            <a href="#lists"
+              class="text-2xl font-semibold text-purple-700 dark:text-purple-400 hover:underline contrast-more:text-purple-900">
+              # Lists
+            </a>
+          </h2>
+
+          <div class="grid grid-flow-row gap-8 mt-8 md:grid-flow-col auto-rows-max">
+            <ul class="list-disc list-inside">
+              <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem dolor sit amet.
+              </li>
+              <li class="block text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">
+                Lorem amet dolor sit ipsum.
+                <ul class="pl-8 list-disc list-inside">
+                  <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Ipsum sit amet lorem.
+                  </li>
+                  <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">amet sit dolor.</li>
+                </ul>
+              </li>
+              <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Ipsum sit lorem.</li>
+            </ul>
+            <ol class="list-decimal list-inside">
+              <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem dolor sit amet.
+              </li>
+              <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">
+                Ipsum sit lorem.
+                <ul class="pl-8 list-disc list-inside">
+                  <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem amet dolor sit
+                    ipsum.</li>
+                  <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">amet sit dolor.</li>
+                </ul>
+              </li>
+              <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Ipsum lorem.</li>
+            </ol>
+          </div>
+
+          <!-- CODE EXAMPLE ————————————————————————————————————————-->
+          <pre
+            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:border-black"><code class="block text-sm break-words whitespace-pre prettyprint"><!-- UNORDERED LIST -->
+<ul class="list-disc list-inside">
+  <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem dolor sit amet.</li>
+  <li class="block text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">
+    Lorem amet dolor sit ipsum.
+    <ul class="pl-8 list-disc list-inside">
+      <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Ipsum sit amet lorem.</li>
+      <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">amet sit dolor.</li>
+    </ul>
+  </li>
+  <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Ipsum sit lorem.</li>
+</ul>
+
+<!-- ORDERED LIST -->
+<ol class="list-decimal list-inside">
+  <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem dolor sit amet.</li>
+  <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">
+    Ipsum sit lorem.
+    <ul class="pl-8 list-disc list-inside">
+      <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem amet dolor sit ipsum.</li>
+      <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">amet sit dolor.</li>
+    </ul>
+  </li>
+  <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Ipsum lorem.</li>
+</ol></code></pre>
+          <!--————————————————————————————————————————————————————-—-->
+
+        </section>
+        <!-- SECTION:END: LISTS -->
+
+        <!-- SECTION: CODE -->
+        <section class="py-16" id="code">
+
+          <h2>
+            <a href="#code"
+              class="text-2xl font-semibold text-purple-700 dark:text-purple-400 hover:underline contrast-more:text-purple-900">
+              # Code
+            </a>
+          </h2>
+
+          <p class="mt-8 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem ipsum dolor sit
+            amet consectetur
+            Lorem ipsum <code
+              class="px-1 py-[0.5px] bg-gray-100 text-gray-700 dark:text-gray-300   dark:bg-gray-800 border border-gray-200 contrast-more:border-black rounded-sm dark:border-gray-700 contrast-more:bg-black contrast-more:text-white">dolor sit amet consectetur</code>
+            adipisicing
+            elit.
+            Veniam, <code
+              class="px-1 py-[0.5px] bg-gray-100 text-gray-700 dark:text-gray-300   dark:bg-gray-800 border  border-gray-200 contrast-more:border-black rounded-sm dark:border-gray-700 contrast-more:bg-black contrast-more:text-white">cum neque</code>
+            alias quasi
+            recusandae quos et
+            tenetur dolore consequatur rerum?
+          </p>
+
+          <pre
+            class="p-4 mt-8 overflow-auto text-gray-700 bg-gray-100 border border-gray-200 rounded dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 contrast-more:border-black contrast-more:bg-black contrast-more:text-white"><code class="block text-sm break-words whitespace-pre">.some-class {
+  background-color: red;
+}</code></pre>
+
+          <!-- CODE EXAMPLE ————————————————————————————————————————-->
+          <pre
+            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:bg-white contrast-more:border-black"><code class="block text-sm break-words whitespace-pre prettyprint"><!-- INLINE CODE -->
+<code class="px-1 py-[0.5px] bg-gray-100 text-gray-700 dark:text-gray-300   dark:bg-gray-800 border border-gray-200 contrast-more:border-black rounded-sm dark:border-gray-700 contrast-more:bg-black contrast-more:text-white">dolor sit amet consectetur</code>
+
+<!-- CODE BLOCK -->
+<pre class="p-4 mt-8 overflow-auto text-gray-700 bg-gray-100 border border-gray-200 rounded dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 contrast-more:border-black contrast-more:bg-black contrast-more:text-white"><code class="block text-sm break-words whitespace-pre">.some-class {
+  background-color: red;
+}</code></pre></code></pre>
+          <!--————————————————————————————————————————————————————-—-->
+
+        </section>
+        <!-- SECTION:END: CODE -->
+
+        <!-- SECTION: TABLES -->
+        <section class="py-16" id="tables">
+
+          <h2>
+            <a href="#tables"
+              class="text-2xl font-semibold text-purple-700 dark:text-purple-400 hover:underline contrast-more:text-purple-900">
+              # Tables
+            </a>
+          </h2>
+
+          <p class="mt-8 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem ipsum dolor sit
+            amet
+            consectetur
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima assumenda, quas sed aut dicta cupiditate
+            quaerat unde repellat! Animi, est!
+          </p>
+
+          <table class="w-full mt-8">
+            <thead class="border-b border-gray-200 dark:border-gray-700 contrast-more:border-black">
+              <tr class="text-left  [&>:first-child]:pl-0 [&>:last-child]:pr-0">
+                <th class="px-3 py-3 text-base font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">
+                  Name</th>
+                <th class="px-3 py-3 text-base font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">
+                  Age</th>
+                <th class="px-3 py-3 text-base font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">
+                  Sex</th>
+                <th class="px-3 py-3 text-base font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">
+                  Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="border-b contrast-more:border-black dark:border-gray-700 border-gray-200 [&>:first-child]:pl-0 [&>:last-child]:pr-0">
+                <td class="px-3 py-3 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Dave Gamache
+                </td>
+                <td class="px-3 py-3 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">26</td>
+                <td class="px-3 py-3 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Male</td>
+                <td class="px-3 py-3 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">San Francisco
+                </td>
+              </tr>
+              <tr
+                class="border-b contrast-more:border-black dark:border-gray-700 border-gray-200 [&>:first-child]:pl-0 [&>:last-child]:pr-0">
+                <td class="px-3 py-3 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Dwayne
+                  Johnson</td>
+                <td class="px-3 py-3 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">42</td>
+                <td class="px-3 py-3 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Male</td>
+                <td class="px-3 py-3 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Hayward</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- CODE EXAMPLE ————————————————————————————————————————-->
+          <pre
+            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:bg-white contrast-more:border-black"><code class="block text-sm break-words whitespace-pre prettyprint"><table class="w-full">
+  <thead class="border-b border-gray-200dark:border-gray-700 ">
+    <tr class="text-left [&>:first-child]:pl-0 [&>:last-child]:pr-0">
+      <th class="px-3 py-3 text-base font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Name</th>
+      <th class="px-3 py-3 text-base font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Age</th>
+      <th class="px-3 py-3 text-base font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Sex</th>
+      <th class="px-3 py-3 text-base font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border-b dark:border-gray-700 border-gray-200 [&>:first-child]:pl-0 [&>:last-child]:pr-0">
+      <td class="px-3 py-3 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Dave Gamache</td>
+      <td class="px-3 py-3 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">26</td>
+      <td class="px-3 py-3 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Male</td>
+      <td class="px-3 py-3 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">San Francisco</td>
+    </tr>
+    <tr class="border-b dark:border-gray-700 border-gray-200 [&>:first-child]:pl-0 [&>:last-child]:pr-0">
+      <td class="px-3 py-3 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Dwayne Johnson</td>
+      <td class="px-3 py-3 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">42</td>
+      <td class="px-3 py-3 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Male</td>
+      <td class="px-3 py-3 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Hayward</td>
+    </tr>
+  </tbody>
+</table></code></pre>
+          <!--————————————————————————————————————————————————————-—-->
+
+        </section>
+        <!-- SECTION:END: TABLES -->
       </div>
       <!-- CONTAINER:END -->
 
       <!-- RETURN TO TOP LINK -->
-      <a class="fixed items-center justify-center hidden w-10 h-10 text-base text-gray-600 bg-white border border-gray-200 rounded contrast-more:text-gray-900 contrast-more:border-black contrast-more:hover:border-purple-600 md:inline-flex bottom-8 right-8 hover:text-white hover:bg-purple-600"
+      <a class="fixed items-center justify-center hidden w-10 h-10 text-base text-gray-600 bg-white border border-gray-200 rounded dark:hover:border-gray-500 dark:bg-black dark:text-gray-300 dark:border-gray-700 contrast-more:border-black contrast-more:text-black contrast-more:hover:border-purple-600 lg:inline-flex bottom-8 right-8 hover:text-white hover:bg-purple-600"
         href="#top">
         <span class="sr-only">Return to top</span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -1629,7 +2458,7 @@
       document.querySelectorAll("code").forEach(function (item) {
         item.innerHTML = String(item.innerHTML).replace(/[&<>"'\/]/g, function (s) {
           switch (s) {
-            case "&": return "&amp;"
+            case "&": return "\&"
             case "<": return "&lt;"
             case ">": return "&gt;"
             case '"': return "&quot;"
@@ -1648,11 +2477,14 @@
       const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
       const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
-      // show dark mode button on md breakpoint
-      if (window.matchMedia("(min-width: 768px)")) {
-        themeToggleBtn.classList.add("md:inline-flex")
+
+      // md: (min-width: 768px)
+      // lg: (min-width: 1024)
+      // show dark mode button on lg breakpoint
+      if (window.matchMedia("(min-width: 1024)")) {
+        themeToggleBtn.classList.add("lg:inline-flex")
       } else {
-        themeToggleBtn.classList.remove("md:inline-flex")
+        themeToggleBtn.classList.remove("lg:inline-flex")
       }
 
       // Change the icons inside the button based on previous settings
