@@ -8,7 +8,9 @@
     <link preload rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link preload href="style.css" rel="stylesheet" />
 
-    <script defer src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <!-- <script defer src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script> -->
 
     <!-- DARK MODE: USE SAVED STATE -->
     <script>
@@ -24,9 +26,10 @@
 
   <body class="antialiased font-inter dark:bg-black">
 
+
     <!-- DARK MODE BUTTON -->
     <button type="button" id="theme-toggle"
-      class="fixed items-center justify-center hidden w-10 h-10 text-base text-gray-600 bg-white border border-gray-200 rounded dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black dark:hover:border-gray-500 focus:outline-none contrast-more:hover:border-purple-600 top-8 right-8 hover:text-white hover:bg-purple-600"
+      class="fixed items-center justify-center hidden w-10 h-10 text-base text-gray-700 bg-white border border-gray-200 rounded cursor-pointer top-8 right-8 dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none"
       href="#top">
       <span class="sr-only">Dark Mode</span>
       <svg id="theme-toggle-dark-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -53,14 +56,21 @@
           <div class="text-center">
             <h1 class="text-4xl font-light text-gray-700 dark:text-gray-300 contrast-more:text-black">skeleton-inspired,
               tailwind kickstarter.</h1>
-            <a class="inline-block px-8 mt-5 text-base font-semibold leading-9 text-white bg-purple-600 rounded cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900"
+            <a class="inline-flex items-center px-8 py-2 mt-5 text-base text-white bg-purple-600 border border-purple-600 rounded cursor-pointer dark:bg-purple-400 dark:hover:bg-purple-500 hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none"
               href="#download">Download</a>
           </div>
 
           <div class="sm:space-x-8 mt-28 sm:flex">
             <div class="mt-16 sm:mt-0">
-              <img class="mx-auto rounded sm:h-28 aspect-video" alt="placeholder image"
-                src="https://via.placeholder.com/764x448/EAECF0/101828?text=Aspect:16x9">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor"
+                class="mx-auto text-gray-700 w-14 h-14 dark:text-gray-300 contrast-more:text-black" width="56px"
+                height="56px">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+              </svg>
+              <!-- <img class="mx-auto rounded sm:h-28 aspect-video" alt="placeholder image"
+                src="https://via.placeholder.com/764x448/EAECF0/101828?text=Aspect:16x9"> -->
               <p
                 class="mt-4 text-base text-center text-gray-700 dark:text-gray-300 contrast-more:text-black overflow-clip">
                 Lorem ipsum
@@ -69,8 +79,15 @@
               </p>
             </div>
             <div class="mt-16 sm:mt-0">
-              <img class="mx-auto rounded sm:h-28 aspect-video" alt="placeholder image"
-                src="https://via.placeholder.com/764x448/EAECF0/101828?text=Aspect:16x9">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor"
+                class="mx-auto text-gray-700 w-14 h-14 dark:text-gray-300 contrast-more:text-black" width="56px"
+                height="56px">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+              </svg>
+              <!-- <img class="mx-auto rounded sm:h-28 aspect-video" alt="placeholder image"
+                src="https://via.placeholder.com/764x448/EAECF0/101828?text=Aspect:16x9"> -->
               <p
                 class="mt-4 text-base text-center text-gray-700 dark:text-gray-300 contrast-more:text-black overflow-clip">
                 Lorem ipsum
@@ -79,8 +96,15 @@
               </p>
             </div>
             <div class="mt-16 sm:mt-0">
-              <img class="mx-auto rounded sm:h-28 aspect-video" alt="placeholder image"
-                src="https://via.placeholder.com/764x448/EAECF0/101828?text=Aspect:16x9">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor"
+                class="mx-auto text-gray-700 w-14 h-14 dark:text-gray-300 contrast-more:text-black" width="56px"
+                height="56px">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+              </svg>
+              <!-- <img class="mx-auto rounded sm:h-28 aspect-video" alt="placeholder image"
+                src="https://via.placeholder.com/764x448/EAECF0/101828?text=Aspect:16x9"> -->
               <p
                 class="mt-4 text-base text-center text-gray-700 dark:text-gray-300 contrast-more:text-black overflow-clip">
                 Lorem ipsum
@@ -101,25 +125,25 @@
     <!-- INFO: :focus-within does not work on iOS without tabindex="0" on links -->
 
     <!-- MAIN NAVIGATION -->
-    <nav
+    <nav x-data="{open: false}"
       class="fixed top-0 left-0 w-full px-4 py-2 mx-auto bg-white border-b border-gray-200 dark:border-gray-700 lg:border-0 lg:container lg:py-0 lg:sticky lg:px-8 lg:max-w-4xl dark:bg-black contrast-more:border-black">
       <label aria-label="Open navigation menu" for="menu-toggle">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" class="w-6 h-6 cursor-pointer lg:hidden"
-          viewBox="0 0 20 20" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
+          class="w-6 h-6 cursor-pointer lg:hidden dark:text-gray-300" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd"
             d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z"
             clip-rule="evenodd" />
         </svg>
       </label>
-      <input type="checkbox" class="hidden peer" id="menu-toggle" />
+      <input type="checkbox" class="hidden peer" id="menu-toggle" x-model="open" />
       <ul
-        class="flex-col hidden mt-3 [&>:last-child>a]:border-0 [&>:first-child>a]:border-t lg:[&>:first-child>a]:border-t-0 border-gray-200 dark:border-gray-700 contrast-more:border-black lg:mt-0 lg:border-b peer-checked:flex lg:flex lg:space-x-8 lg:flex-row">
+        class="flex-col hidden mt-3 [&>:last-child>a]:border-0 [&>:first-child>a]:border-t lg:[&>:first-child>a]:border-t-0  dark:border-gray-700 contrast-more:border-black lg:mt-0 lg:border-b peer-checked:flex lg:flex lg:space-x-8 lg:flex-row">
         <li class="relative">
-          <a class="inline-flex w-full border-b dark:text-gray-300 contrast-more:border-black border-gray-200  dark:border-gray-700 lg:border-0 items-center text-lg font-semibold no-underline lg:leading-[3rem] text-gray-700 contrast-more:text-black  focus:text-purple-600 leading-loose cursor-pointer  hover:text-purple-600"
+          <a class="inline-flex w-full border-b dark:text-gray-300 contrast-more:border-black border-gray-200  dark:border-gray-700 lg:border-0 items-center text-lg font-semibold no-underline lg:leading-[3rem] text-gray-700 contrast-more:text-black  focus:text-purple-600 leading-loose cursor-pointer  hover:text-purple-600 dark:hover:text-purple-400"
             tabindex="0" href="#intro">Intro</a>
         </li>
         <li class="relative group">
-          <a class="inline-flex w-full border-b dark:text-gray-300 contrast-more:border-black border-gray-200  dark:border-gray-700 lg:border-0 items-center text-lg font-semibold no-underline lg:leading-[3rem] text-gray-700 contrast-more:text-black  focus:text-purple-600 leading-loose cursor-pointer  hover:text-purple-600"
+          <a class="inline-flex w-full border-b group-focus-within:border-b lg:lg:group-focus-within:border-b-0  dark:text-gray-300 contrast-more:border-black border-gray-200  dark:border-gray-700 lg:border-0 items-center text-lg font-semibold no-underline lg:leading-[3rem] text-gray-700 contrast-more:text-black  focus:text-purple-600 leading-loose cursor-pointer  hover:text-purple-600 dark:hover:text-purple-400"
             tabindex="0">Code<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
               class="ml-1" width="20px" height="20px">
               <path fill-rule="evenodd"
@@ -128,38 +152,46 @@
             </svg></a>
 
           <ul
-            class="hidden bg-white group-focus-within:block lg:max-w-fit lg:left-1/2 lg:-translate-x-1/2 lg:absolute lg:border lg:rounded-b-md border-gray-200 dark:border-gray-700 contrast-more:border-black lg:[&>:last-child>a]:rounded-b lg:[&>*]:border-b lg:[&>*]:contrast-more:border-black lg:[&>:last-child]:border-0">
-            <li>
-              <a class="block py-1 text-sm font-semibold text-gray-700 no-underline lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
-                tabindex="0" href="#colors">Colors</a>
+            class="hidden bg-white dark:bg-black [&>:last-child]:border-0 group-focus-within:block lg:max-w-fit lg:left-1/2 lg:-translate-x-1/2 lg:absolute lg:border lg:rounded-b border-gray-200 dark:border-gray-700 contrast-more:border-black lg:[&>:last-child>a]:rounded-b lg:[&>*]:border-b lg:[&>*]:contrast-more:border-black lg:[&>:last-child]:border-0">
+            <li
+              class="border-b border-gray-200 dark:border-gray-700 dark:text-gray-300 contrast-more:border-black lg:border-0">
+              <a class="block py-1 pl-4 text-lg font-semibold text-gray-700 no-underline lg:text-sm lg:dark:hover:bg-purple-400 dark:hover:text-purple-400 lg:dark:hover:text-white dark:text-gray-300 lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
+                tabindex="0" href="#colors" x-on:click="open = false">Colors</a>
             </li>
-            <li class="">
-              <a class="block py-1 text-sm font-semibold text-gray-700 no-underline lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
-                tabindex="0" href="#typography">Typography</a>
+            <li
+              class="border-b border-gray-200 dark:border-gray-700 dark:text-gray-300 contrast-more:border-black lg:border-0">
+              <a class="block py-1 pl-4 text-lg font-semibold text-gray-700 no-underline lg:text-sm lg:dark:hover:bg-purple-400 dark:hover:text-purple-400 lg:dark:hover:text-white dark:text-gray-300 lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
+                tabindex="0" href="#typography" x-on:click="open = false">Typography</a>
             </li>
-            <li>
-              <a class="block py-1 text-sm font-semibold text-gray-700 no-underline lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
-                tabindex="0" href="#grids">Grids</a>
+            <li
+              class="border-b border-gray-200 dark:border-gray-700 dark:text-gray-300 contrast-more:border-black lg:border-0">
+              <a class="block py-1 pl-4 text-lg font-semibold text-gray-700 no-underline lg:text-sm lg:dark:hover:bg-purple-400 dark:hover:text-purple-400 lg:dark:hover:text-white dark:text-gray-300 lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
+                tabindex="0" href="#grids" x-on:click="open = false">Grids</a>
             </li>
-            <li>
-              <a class="block py-1 text-sm font-semibold text-gray-700 no-underline lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
-                tabindex="0" href="#buttons">Buttons</a>
+            <li
+              class="border-b border-gray-200 dark:border-gray-700 dark:text-gray-300 contrast-more:border-black lg:border-0">
+              <a class="block py-1 pl-4 text-lg font-semibold text-gray-700 no-underline lg:text-sm lg:dark:hover:bg-purple-400 dark:hover:text-purple-400 lg:dark:hover:text-white dark:text-gray-300 lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
+                tabindex="0" href="#buttons" x-on:click="open = false">Buttons</a>
             </li>
-            <li>
-              <a class="block py-1 text-sm font-semibold text-gray-700 no-underline lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
-                tabindex="0" href="#forms">Forms</a>
+            <li
+              class="border-b border-gray-200 dark:border-gray-700 dark:text-gray-300 contrast-more:border-black lg:border-0">
+              <a class="block py-1 pl-4 text-lg font-semibold text-gray-700 no-underline lg:text-sm lg:dark:hover:bg-purple-400 dark:hover:text-purple-400 lg:dark:hover:text-white dark:text-gray-300 lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
+                tabindex="0" href="#forms" x-on:click="open = false">Forms</a>
             </li>
-            <li class="">
-              <a class="block py-1 text-sm font-semibold text-gray-700 no-underline lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
-                tabindex="0" href="#lists">Lists</a>
+            <li
+              class="border-b border-gray-200 dark:border-gray-700 dark:text-gray-300 contrast-more:border-black lg:border-0">
+              <a class="block py-1 pl-4 text-lg font-semibold text-gray-700 no-underline lg:text-sm lg:dark:hover:bg-purple-400 dark:hover:text-purple-400 lg:dark:hover:text-white dark:text-gray-300 lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
+                tabindex="0" href="#lists" x-on:click="open = false">Lists</a>
             </li>
-            <li>
-              <a class="block py-1 text-sm font-semibold text-gray-700 no-underline lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
-                tabindex="0" href="#code">Code</a>
+            <li
+              class="border-b border-gray-200 dark:border-gray-700 dark:text-gray-300 contrast-more:border-black lg:border-0">
+              <a class="block py-1 pl-4 text-lg font-semibold text-gray-700 no-underline lg:text-sm lg:dark:hover:bg-purple-400 dark:hover:text-purple-400 lg:dark:hover:text-white dark:text-gray-300 lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
+                tabindex="0" href="#code" x-on:click="open = false">Code</a>
             </li>
-            <li>
-              <a class="block py-1 text-sm font-semibold text-gray-700 no-underline lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
-                tabindex="0" href="#tables">Tables</a>
+            <li
+              class="border-b border-gray-200 dark:border-gray-700 dark:text-gray-300 contrast-more:border-black lg:border-0">
+              <a class="block py-1 pl-4 text-lg font-semibold text-gray-700 no-underline lg:text-sm lg:dark:hover:bg-purple-400 dark:hover:text-purple-400 lg:dark:hover:text-white dark:text-gray-300 lg:py-2 lg:text-center lg:px-5 whitespace-nowrap lg:hover:bg-purple-600 lg:focus:bg-purple-600 hover:text-purple-600 lg:hover:text-white lg:focus:text-white"
+                tabindex="0" href="#tables" x-on:click="open = false">Tables</a>
             </li>
           </ul>
         </li>
@@ -220,15 +252,15 @@
           <!-- SECTION: COLOR GRAY -->
           <section class="mt-8">
 
-            <h3 class="text-lg font-semibold text-gray-700 contrast-more:text-black dark:text-gray-300">
+            <h3 class="text-lg font-semibold text-gray-700 contrast-more:text-black dark:ztext-gray-300">
               Gray
             </h3>
 
-            <div class="grid gap-2 mt-2 lg:grid-cols-10">
+            <div class="grid gap-4 mt-2 lg:gap-3 lg:grid-cols-10">
 
               <!-- SAMPLE: 50 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-gray-700 uppercase rounded-t bg-gray-50">
                   AAA
@@ -242,7 +274,7 @@
 
               <!-- SAMPLE: 100 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-gray-700 uppercase bg-gray-100 rounded-t">
                   AAA
@@ -256,7 +288,7 @@
 
               <!-- SAMPLE: 200 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-gray-700 uppercase bg-gray-200 rounded-t">
                   AAA
@@ -269,7 +301,7 @@
 
               <!-- SAMPLE: 300 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-gray-300 rounded-t">
                   1.47
@@ -282,7 +314,7 @@
 
               <!-- SAMPLE: 400 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-gray-400 rounded-t">
                   2.53
@@ -295,7 +327,7 @@
 
               <!-- SAMPLE: 500 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-gray-500 rounded-t">
                   AA 4.83
@@ -308,7 +340,7 @@
 
               <!-- SAMPLE: 600 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-gray-600 rounded-t">
                   AAA
@@ -321,7 +353,7 @@
 
               <!-- SAMPLE: 700 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-gray-700 rounded-t">
                   AAA
@@ -334,7 +366,7 @@
 
               <!-- SAMPLE: 800 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-gray-700 rounded-t">
                   AAA
@@ -347,7 +379,7 @@
 
               <!-- SAMPLE: 900 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-gray-900 rounded-t">
                   AAA
@@ -370,11 +402,11 @@
               Purple
             </h3>
 
-            <div class="grid gap-2 mt-2 lg:grid-cols-10">
+            <div class="grid gap-4 mt-2 lg:gap-3 lg:grid-cols-10">
 
               <!-- SAMPLE: 50 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-purple-700 uppercase rounded-t bg-purple-50">
                   AA 6.50
@@ -387,7 +419,7 @@
 
               <!-- SAMPLE: 100 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-purple-700 uppercase bg-purple-100 rounded-t">
                   AA 5.91
@@ -400,7 +432,7 @@
 
               <!-- SAMPLE: 200 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-purple-700 uppercase bg-purple-200 rounded-t">
                   AA 5.12
@@ -413,7 +445,7 @@
 
               <!-- SAMPLE: 300 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-purple-300 rounded-t">
                   1.76
@@ -426,7 +458,7 @@
 
               <!-- SAMPLE: 400 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-purple-400 rounded-t">
                   2.64
@@ -439,7 +471,7 @@
 
               <!-- SAMPLE: 500 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-purple-500 rounded-t">
                   3.95
@@ -452,7 +484,7 @@
 
               <!-- SAMPLE: 600 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-purple-600 rounded-t">
                   AA 5.38
@@ -465,7 +497,7 @@
 
               <!-- SAMPLE: 700 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-purple-700 rounded-t">
                   AA 6.98
@@ -478,7 +510,7 @@
 
               <!-- SAMPLE: 800 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-purple-700 rounded-t">
                   AAA
@@ -491,7 +523,7 @@
 
               <!-- SAMPLE: 900 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-purple-900 rounded-t">
                   AAA
@@ -514,11 +546,11 @@
               Green
             </h3>
 
-            <div class="grid gap-2 mt-2 lg:grid-cols-10">
+            <div class="grid gap-4 mt-2 lg:gap-3 lg:grid-cols-10">
 
               <!-- SAMPLE: 50 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-green-700 uppercase rounded-t bg-green-50">
                   AA 4.79
@@ -531,7 +563,7 @@
 
               <!-- SAMPLE: 100 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-green-700 uppercase bg-green-100 rounded-t">
                   AA 4.56
@@ -544,7 +576,7 @@
 
               <!-- SAMPLE: 200 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-green-700 uppercase bg-green-200 rounded-t">
                   4.13
@@ -557,7 +589,7 @@
 
               <!-- SAMPLE: 300 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-green-300 rounded-t">
                   1.40
@@ -570,7 +602,7 @@
 
               <!-- SAMPLE: 400 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-green-400 rounded-t">
                   1.74
@@ -583,7 +615,7 @@
 
               <!-- SAMPLE: 500 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-green-500 rounded-t">
                   2.27
@@ -596,7 +628,7 @@
 
               <!-- SAMPLE: 600 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-green-600 rounded-t">
                   3.29
@@ -609,7 +641,7 @@
 
               <!-- SAMPLE: 700 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-green-700 rounded-t">
                   AA 5.01
@@ -622,7 +654,7 @@
 
               <!-- SAMPLE: 800 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-green-700 rounded-t">
                   AAA
@@ -635,7 +667,7 @@
 
               <!-- SAMPLE: 900 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-green-900 rounded-t">
                   AAA
@@ -658,11 +690,11 @@
               Blue
             </h3>
 
-            <div class="grid gap-2 mt-2 lg:grid-cols-10">
+            <div class="grid gap-4 mt-2 lg:gap-3 lg:grid-cols-10">
 
               <!-- SAMPLE: 50 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-blue-700 uppercase rounded-t bg-blue-50">
                   AA 6.15
@@ -675,7 +707,7 @@
 
               <!-- SAMPLE: 100 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-blue-700 uppercase bg-blue-100 rounded-t">
                   AA 5.72
@@ -688,7 +720,7 @@
 
               <!-- SAMPLE: 200 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-blue-700 uppercase bg-blue-200 rounded-t">
                   AA 4.92
@@ -701,7 +733,7 @@
 
               <!-- SAMPLE: 300 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-blue-300 rounded-t">
                   1.69
@@ -714,7 +746,7 @@
 
               <!-- SAMPLE: 400 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-blue-400 rounded-t">
                   2.49
@@ -727,7 +759,7 @@
 
               <!-- SAMPLE: 500 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-blue-500 rounded-t">
                   2.49
@@ -740,7 +772,7 @@
 
               <!-- SAMPLE: 600 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-blue-600 rounded-t">
                   AA 4.95
@@ -753,7 +785,7 @@
 
               <!-- SAMPLE: 700 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-blue-700 rounded-t">
                   AA 6.61
@@ -766,7 +798,7 @@
 
               <!-- SAMPLE: 800 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-blue-700 rounded-t">
                   AAA
@@ -779,7 +811,7 @@
 
               <!-- SAMPLE: 900 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-blue-900 rounded-t">
                   AAA
@@ -802,11 +834,11 @@
               Orange
             </h3>
 
-            <div class="grid gap-2 mt-2 lg:grid-cols-10">
+            <div class="grid gap-4 mt-2 lg:gap-3 lg:grid-cols-10">
 
               <!-- SAMPLE: 50 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-orange-700 uppercase rounded-t bg-orange-50">
                   AA 4.87
@@ -819,7 +851,7 @@
 
               <!-- SAMPLE: 100 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-orange-700 uppercase bg-orange-100 rounded-t">
                   AA 4.51
@@ -832,7 +864,7 @@
 
               <!-- SAMPLE: 200 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-orange-700 uppercase bg-orange-200 rounded-t">
                   3.82
@@ -845,7 +877,7 @@
 
               <!-- SAMPLE: 300 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-orange-300 rounded-t">
                   1.68
@@ -858,7 +890,7 @@
 
               <!-- SAMPLE: 400 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-orange-400 rounded-t">
                   2.26
@@ -871,7 +903,7 @@
 
               <!-- SAMPLE: 500 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-orange-500 rounded-t">
                   2.80
@@ -884,7 +916,7 @@
 
               <!-- SAMPLE: 600 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-orange-600 rounded-t">
                   3.55
@@ -897,7 +929,7 @@
 
               <!-- SAMPLE: 700 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-orange-700 rounded-t">
                   AA 5.17
@@ -910,7 +942,7 @@
 
               <!-- SAMPLE: 800 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-orange-700 rounded-t">
                   AAA
@@ -923,7 +955,7 @@
 
               <!-- SAMPLE: 900 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-orange-900 rounded-t">
                   AAA
@@ -946,11 +978,11 @@
               Red
             </h3>
 
-            <div class="grid gap-2 mt-2 lg:grid-cols-10">
+            <div class="grid gap-4 mt-2 lg:gap-3 lg:grid-cols-10">
 
               <!-- SAMPLE: 50 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-red-700 uppercase rounded-t bg-red-50">
                   AA 5.91
@@ -963,7 +995,7 @@
 
               <!-- SAMPLE: 100 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-red-700 uppercase bg-red-100 rounded-t">
                   AA 5.29
@@ -976,7 +1008,7 @@
 
               <!-- SAMPLE: 200 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-red-700 uppercase bg-red-200 rounded-t">
                   4.47
@@ -989,7 +1021,7 @@
 
               <!-- SAMPLE: 300 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-red-300 rounded-t">
                   3.40
@@ -1002,7 +1034,7 @@
 
               <!-- SAMPLE: 400 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-red-400 rounded-t">
                   2.76
@@ -1015,7 +1047,7 @@
 
               <!-- SAMPLE: 500 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-red-500 rounded-t">
                   3.76
@@ -1028,7 +1060,7 @@
 
               <!-- SAMPLE: 600 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-red-600 rounded-t">
                   AA 4.82
@@ -1041,7 +1073,7 @@
 
               <!-- SAMPLE: 700 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-red-700 rounded-t">
                   AA 6.47
@@ -1054,7 +1086,7 @@
 
               <!-- SAMPLE: 800 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-red-700 rounded-t">
                   AAA
@@ -1067,7 +1099,7 @@
 
               <!-- SAMPLE: 900 -->
               <div
-                class="flex flex-col col-span-10 rounded dark:shadow-white dark:shadow-sm md:shadow-md md:col-span-1">
+                class="flex flex-col col-span-10 rounded md:dark:shadow-white md:dark:shadow-sm md:shadow-md md:col-span-1">
                 <div
                   class="flex items-center justify-center h-20 p-2 text-xs font-semibold text-white uppercase bg-red-900 rounded-t">
                   AAA
@@ -1141,7 +1173,7 @@
 
           <!-- CODE EXAMPLE ————————————————————————————————————————-->
           <pre
-            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:bg-white contrast-more:border-black"><code class="block text-sm break-words whitespace-pre prettyprint"><h1 class="block text-4xl font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading 1</h1>
+            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:bg-white contrast-more:border-black"><code class="block text-sm text-gray-700 break-words whitespace-pre prettyprint dark:text-gray-300"><h1 class="block text-4xl font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading 1</h1>
 <h2 class="block text-3xl font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading 2</h2>
 <h3 class="block text-2xl font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading 3</h3>
 <h4 class="block text-xl font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading 4</h4>
@@ -1346,7 +1378,7 @@
 
             <!-- CODE EXAMPLE ————————————————————————————————————————-->
             <pre
-              class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:bg-white contrast-more:border-black"><code class="block text-sm break-words whitespace-pre prettyprint"><div class="grid gap-2 md:grid-cols-12">
+              class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:bg-white contrast-more:border-black"><code class="block text-sm text-gray-700 break-words whitespace-pre dark:text-gray-300 prettyprint"><div class="grid gap-2 md:grid-cols-12">
                         
   <!-- ROW: 1-11 -->
   <div class="col-span-12 md:col-span-1">
@@ -2040,7 +2072,7 @@
 
             <!-- CODE EXAMPLE ————————————————————————————————————————-->
             <pre
-              class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:bg-white contrast-more:border-black"><code class="block text-sm break-words whitespace-pre prettyprint"><!-- AUTO GRID -->
+              class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:bg-white contrast-more:border-black"><code class="block text-sm text-gray-700 break-words whitespace-pre dark:text-gray-300 prettyprint"><!-- AUTO GRID -->
 <div class="grid grid-flow-row gap-2 mt-2 md:grid-flow-col auto-rows-max">
   <!-- COL: -->
   <div>
@@ -2081,21 +2113,21 @@
           <div class="grid gap-2 mt-8 md:grid-cols-4">
             <div>
               <a href="#"
-                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">Anchor
+                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">Anchor
                 Button</a>
             </div>
             <div>
               <button type="button"
-                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">Button
+                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">Button
                 Element</button>
             </div>
             <div>
               <input type="submit" value="Submit Input"
-                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">
+                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">
             </div>
             <div>
               <input type="button" value="Button Input"
-                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">
+                class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">
             </div>
           </div>
 
@@ -2103,37 +2135,37 @@
           <div class="grid gap-2 mt-4 md:grid-cols-4">
             <div>
               <a
-                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">Anchor
+                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded cursor-pointer dark:bg-purple-400 dark:hover:bg-purple-500 hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">Anchor
                 Button</a>
             </div>
             <div>
               <button type="button"
-                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">Button
+                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded cursor-pointer dark:bg-purple-400 dark:hover:bg-purple-500 hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">Button
                 Element</button>
             </div>
             <div>
               <input type="submit" value="Submit Input"
-                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">
+                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded cursor-pointer dark:bg-purple-400 dark:hover:bg-purple-500 hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">
             </div>
             <div>
               <input type="button" value="Button Input"
-                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">
+                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded cursor-pointer dark:bg-purple-400 dark:hover:bg-purple-500 hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">
             </div>
           </div>
 
           <!-- CODE EXAMPLE ————————————————————————————————————————-->
           <pre
-            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700"><code class="block text-sm break-words whitespace-pre prettyprint"><!-- STANDARD BUTTONS -->
-<a href="#" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">Anchor Button</a>
-<button type="button" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">Button Element</button>
-<input type="submit" value="Submit Input" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">
-<input type="button" value="Button Input" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded-md cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">
+            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700"><code class="block text-sm text-gray-700 break-words whitespace-pre dark:text-gray-300 prettyprint"><!-- STANDARD BUTTONS -->
+<a href="#" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">Anchor Button</a>
+<button type="button" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">Button Element</button>
+<input type="submit" value="Submit Input" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">
+<input type="button" value="Button Input" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">
 
 <!-- PRIMARY BUTTONS -->
-<a class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">Anchor Button</a>
-<button type="button" class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">Button Element</button>
-<input type="submit" value="Submit Input" class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">
-<input type="button" value="Button Input" class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none"></code></pre>
+<a class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded cursor-pointer dark:bg-purple-400 dark:hover:bg-purple-500 hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">Anchor Button</a>
+<button type="button" class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded cursor-pointer dark:bg-purple-400 dark:hover:bg-purple-500 hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">Button Element</button>
+<input type="submit" value="Submit Input" class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded cursor-pointer dark:bg-purple-400 dark:hover:bg-purple-500 hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">
+<input type="button" value="Button Input" class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded cursor-pointer dark:bg-purple-400 dark:hover:bg-purple-500 hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none"></code></pre>
           <!--————————————————————————————————————————————————————-—-->
 
         </section>
@@ -2162,7 +2194,7 @@
                   class="block text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Your
                   email</label>
                 <input
-                  class="block w-full text-gray-700 border-gray-300 rounded-sm dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
+                  class="block w-full text-gray-700 border-gray-300 rounded dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 dark:focus:border-purple-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
                   type="email" id="exampleEmailInput">
               </div>
               <div class="flex flex-col">
@@ -2170,7 +2202,7 @@
                   class="block text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Reason
                   for contacting</label>
                 <select
-                  class="block w-full text-gray-700 border-gray-300 rounded-sm dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
+                  class="block w-full text-gray-700 border-gray-300 rounded dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black dark:focus:border-purple-400 contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
                   id="exampleRecipientInput">
                   <option value="Option 1">Questions</option>
                   <option value="Option 2">Admiration</option>
@@ -2182,16 +2214,16 @@
               <label for="exampleMessage"
                 class="block text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Message</label>
               <textarea
-                class="block w-full text-gray-700 border-gray-300 rounded-sm dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
+                class="block w-full text-gray-700 border-gray-300 rounded dark:focus:border-purple-400 dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
                 id="exampleMessage"></textarea>
             </div>
             <div class="flex justify-between mt-4">
               <input type="submit" value="Submit"
-                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">
+                class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded cursor-pointer dark:bg-purple-400 dark:hover:bg-purple-500 hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">
 
               <label class="example-send-yourself-copy">
                 <input type="checkbox"
-                  class="w-4 h-4 text-purple-600 border-gray-300 rounded-sm dark:bg-black dark:ring-offset-black dark:checked:bg-purple-600 focus:ring-purple-600 sm:text-sm">
+                  class="w-4 h-4 text-purple-600 border-gray-300 rounded dark:text-purple-400 dark:bg-black dark:ring-offset-black dark:checked:bg-purple-400 focus:ring-purple-600 dark:focus:ring-purple-400 sm:text-sm">
                 <span class="ml-2 text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Send
                   a copy to
                   yourself</span>
@@ -2201,20 +2233,20 @@
 
           <!-- CODE EXAMPLE ————————————————————————————————————————-->
           <pre
-            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:border-black"><code class="block text-sm break-words whitespace-pre prettyprint"><form action="#form">
+            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:border-black"><code class="block text-sm text-gray-700 break-words whitespace-pre dark:text-gray-300 prettyprint"><form action="#form">
   <div class="grid grid-flow-row gap-4 mt-8 lg:gap-8 lg:grid-flow-col auto-rows-max">
     <div class="flex flex-col">
       <label for="exampleEmailInput" class="block text-base text-gray-700 contrast-more:text-black">Your
         email</label>
       <input
-        class="block w-full text-gray-700 border-gray-300 rounded-sm dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
+        class="block w-full text-gray-700 border-gray-300 rounded dark:focus:border-purple-400 dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
         type="email" id="exampleEmailInput">
     </div>
     <div class="flex flex-col">
       <label for="exampleRecipientInput" class="block text-base text-gray-700 contrast-more:text-black">Reason
         for contacting</label>
       <select
-        class="block w-full text-gray-700 border-gray-300 rounded-sm dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
+        class="block w-full text-gray-700 border-gray-300 rounded dark:focus:border-purple-400 dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
         id="exampleRecipientInput">
         <option value="Option 1">Questions</option>
         <option value="Option 2">Admiration</option>
@@ -2225,14 +2257,14 @@
   <div class="flex flex-col mt-4">
     <label for="exampleMessage" class="block text-base text-gray-700 contrast-more:text-black">Message</label>
     <textarea
-      class="block w-full text-gray-700 border-gray-300 rounded-sm dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
+      class="block w-full text-gray-700 border-gray-300 rounded dark:focus:border-purple-400 dark:border-gray-600 dark:bg-black dark:text-gray-300 contrast-more:text-black contrast-more:border-black contrast-more:hover:border-black dark:hover:border-gray-500 hover:border-gray-400 focus:border-purple-500 focus:ring-0 contrast-more:focus:hover:border-purple-500 sm:text-sm"
       id="exampleMessage"></textarea>
   </div>
   <div class="flex justify-between mt-4">
     <input type="submit" value="Submit"
-      class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded-md cursor-pointer hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">      
+      class="inline-flex items-center px-8 py-2 text-base text-white bg-purple-600 border border-purple-600 rounded cursor-pointer dark:bg-purple-400 dark:hover:bg-purple-500 hover:bg-purple-700 contrast-more:hover:bg-purple-900 contrast-more:hover:border-purple-900 hover:border-purple-700 focus:outline-none">      
     <label class="example-send-yourself-copy">
-      <input type="checkbox" class="w-4 h-4 text-purple-600 border-gray-300 rounded-sm dark:bg-black dark:ring-offset-black dark:checked:bg-purple-600 focus:ring-purple-600 sm:text-sm">
+      <input type="checkbox" class="w-4 h-4 text-purple-600 border-gray-300 rounded dark:text-purple-400 dark:bg-black dark:ring-offset-black dark:checked:bg-purple-400 focus:ring-purple-600 dark:focus:ring-purple-400 sm:text-sm">
       <span class="ml-2 text-base text-gray-700 contrast-more:text-black">Send a copy to yourself</span>
     </label>
   </div>
@@ -2283,7 +2315,7 @@
 
           <!-- CODE EXAMPLE ————————————————————————————————————————-->
           <pre
-            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:border-black"><code class="block text-sm break-words whitespace-pre prettyprint"><!-- UNORDERED LIST -->
+            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:border-black"><code class="block text-sm text-gray-700 break-words whitespace-pre dark:text-gray-300 prettyprint"><!-- UNORDERED LIST -->
 <ul class="list-disc list-inside">
   <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem dolor sit amet.</li>
   <li class="block text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">
@@ -2343,7 +2375,7 @@
 
           <!-- CODE EXAMPLE ————————————————————————————————————————-->
           <pre
-            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:bg-white contrast-more:border-black"><code class="block text-sm break-words whitespace-pre prettyprint"><!-- INLINE CODE -->
+            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:bg-white contrast-more:border-black"><code class="block text-sm text-gray-700 break-words whitespace-pre dark:text-gray-300 prettyprint"><!-- INLINE CODE -->
 <code class="px-1 py-[0.5px] bg-gray-100 text-gray-700 dark:text-gray-300   dark:bg-gray-800 border border-gray-200 contrast-more:border-black rounded-sm dark:border-gray-700 contrast-more:bg-black contrast-more:text-white">dolor sit amet consectetur</code>
 
 <!-- CODE BLOCK -->
@@ -2408,7 +2440,7 @@
 
           <!-- CODE EXAMPLE ————————————————————————————————————————-->
           <pre
-            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:bg-white contrast-more:border-black"><code class="block text-sm break-words whitespace-pre prettyprint"><table class="w-full">
+            class="p-4 mt-8 overflow-auto border border-gray-200 rounded dark:border-gray-700 contrast-more:bg-white contrast-more:border-black"><code class="block text-sm text-gray-700 break-words whitespace-pre dark:text-gray-300 prettyprint"><table class="w-full">
   <thead class="border-b border-gray-200dark:border-gray-700 ">
     <tr class="text-left [&>:first-child]:pl-0 [&>:last-child]:pr-0">
       <th class="px-3 py-3 text-base font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Name</th>
@@ -2440,7 +2472,7 @@
       <!-- CONTAINER:END -->
 
       <!-- RETURN TO TOP LINK -->
-      <a class="fixed items-center justify-center hidden w-10 h-10 text-base text-gray-600 bg-white border border-gray-200 rounded dark:hover:border-gray-500 dark:bg-black dark:text-gray-300 dark:border-gray-700 contrast-more:border-black contrast-more:text-black contrast-more:hover:border-purple-600 lg:inline-flex bottom-8 right-8 hover:text-white hover:bg-purple-600"
+      <a class="fixed items-center justify-center hidden w-10 h-10 text-base text-gray-700 bg-white border border-gray-200 rounded cursor-pointer lg:inline-flex bottom-8 right-8 dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none"
         href="#top">
         <span class="sr-only">Return to top</span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"

@@ -5,6 +5,7 @@
   "license": "MIT",
   "author": "SirMetathyst",
   "scripts": {
+    "build": "npm run tailwind:build",
     "dev": "npm run tailwind:watch & npm run prettier:watch & npm run dev-server",
     "dev-server": "web-dev-server --open ./ --node-resolve --watch",
     "tailwind:build": "npx tailwindcss -i ./tailwind.css -o ./style.css",
