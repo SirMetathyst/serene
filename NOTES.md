@@ -1,4 +1,0 @@
-- Element (Button, Button-Group, Drop-Down, Textbox)?
-- Block (Navigation, Card, Tab, Breadcrumb)?
-- Section (Feature/Price, Header, Footer, Content)?
-- Page (404, Dashboard, Kanban, Contact, About, Login)?
