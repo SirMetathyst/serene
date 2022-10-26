@@ -14,7 +14,7 @@ Serene uses the standard tailwind colors and provides a minimal set (for base, p
 
 Type is all set with tailwind classes. Serene doesn't implement custom classes or apply styles to the elements themselves. Like tailwind ui and other tailwind based component/template/kickstart libraries you just copy-paste the markup. Dark and high contrast modes are part of the style. The typography base is Inter served by rsme, set at text-base (1rem / 16px) over a 1.5rem line height (24px). Other type basics like anchors, strong, emphasis, and underline are all included. 
 
-```
+```html
 <h1 class="block text-4xl font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading 1</h1>
 <h2 class="block text-3xl font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading 2</h2>
 <h3 class="block text-2xl font-semibold text-gray-700 dark:text-gray-300 contrast-more:text-black">Heading 3</h3>
@@ -32,7 +32,7 @@ Type is all set with tailwind classes. Serene doesn't implement custom classes o
 
  If you want to use the Inter font in your project then you will need to include the following line to your tailwind configuration file, the css link to your page and the font-inter class to the element where you want to use the font. For convenience you can just apply it to the body tag to effect everything. 
 
- ```
+ ```js
  module.exports = {
 ...
 theme: {
@@ -51,7 +51,7 @@ theme: {
 
 Grids are automatically generated as utility classes by tailwind but Serene provides two grid configurations for your convenience. Just go ahead and copy-paste it into your project. 
 
-```
+```html
 <div class="grid gap-2 md:grid-cols-12">
                         
   <!-- ROW: 1-11 -->
@@ -144,7 +144,7 @@ Grids are automatically generated as utility classes by tailwind but Serene prov
 </div>
 ```
 
-```
+```html
 <!-- AUTO GRID -->
 <div class="grid grid-flow-row gap-2 mt-2 md:grid-flow-col auto-rows-max">
   <!-- COL: -->
@@ -164,7 +164,7 @@ Grids are automatically generated as utility classes by tailwind but Serene prov
 
 Buttons come in two basic flavors in Serene. The standard button element is plain, whereas the primary button is vibrant and prominent. Button styles are provided for a number of appropriate form elements. Dark and high contrast modes are part of the style. 
 
-```
+```html
 <!-- STANDARD BUTTONS -->
 <a href="#" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">Anchor Button</a>
 <button type="button" class="inline-flex items-center px-8 py-2 text-base text-gray-700 bg-white border border-gray-200 rounded cursor-pointer dark:border-gray-700 dark:bg-black dark:text-gray-300 contrast-more:border-black contrast-more:text-black hover:border-gray-400 dark:hover:border-gray-500 contrast-more:hover:border-black focus:outline-none">Button Element</button>
@@ -182,7 +182,7 @@ Buttons come in two basic flavors in Serene. The standard button element is plai
 
 All inputs, select, and buttons are normalized using the forms tailwind plugin for a common height cross-browser so inputs can be stacked or placed alongside each other. Dark and high contrast modes are part of the style. 
 
-```
+```html
 <form action="#form">
   <div class="grid grid-flow-row gap-4 mt-8 lg:gap-8 lg:grid-flow-col auto-rows-max">
     <div class="flex flex-col">
@@ -216,7 +216,7 @@ All inputs, select, and buttons are normalized using the forms tailwind plugin f
 
 Remember to install the forms tailwind plugin and add it to your tailwind configuration file. 
 
-```
+```js
 module.exports = {
   ...
   plugins: [
@@ -227,7 +227,7 @@ module.exports = {
 
 ## Lists
 
-```
+```html
 <!-- UNORDERED LIST -->
 <ul class="list-disc list-inside">
   <li class="text-base text-gray-700 dark:text-gray-300 contrast-more:text-black">Lorem dolor sit amet.</li>
@@ -257,7 +257,7 @@ module.exports = {
 
 ## Code
 
-```
+```html
 <!-- INLINE CODE -->
 <code class="px-1 py-[0.5px] bg-gray-100 text-gray-700 dark:text-gray-300   dark:bg-gray-800 border border-gray-200 contrast-more:border-black rounded-sm dark:border-gray-700 contrast-more:bg-black contrast-more:text-white">dolor sit amet consectetur</code>
 
@@ -269,7 +269,7 @@ module.exports = {
 
 ## Tables
 
-```
+```html
 <table class="w-full">
   <thead class="border-b border-gray-200dark:border-gray-700 ">
     <tr class="text-left [&>:first-child]:pl-0 [&>:last-child]:pr-0">
